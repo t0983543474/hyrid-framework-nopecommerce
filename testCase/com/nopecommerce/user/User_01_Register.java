@@ -44,7 +44,6 @@ public class User_01_Register {
 		
 	  Assert.assertEquals(driver.findElement(By.cssSelector("span#ConfirmPassword-error")).getText(), "Password is required.");
 		
-		
 	  
   }
   
