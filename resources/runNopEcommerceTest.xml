@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="NopEcommerce" >
   <test name="Run on Firefox">
-    <classes>
+    <classes> 
       <class name="com.nopecommerce.user.Level_03_Page_Object"/>
     </classes>
   </test> <!-- Test -->
