@@ -15,7 +15,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
-public class Level_03_Page_Object {
+public class Level_03_Page_Object_01_Register {
 
 	WebDriver driver;
 	HomePageObject homePage;
@@ -28,17 +28,17 @@ public class Level_03_Page_Object {
 	public void beforeClass() {
 		System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDriver\\chromedriver.exe");
 		driver = new ChromeDriver();
-		homePage = new HomePageObject(driver);
-		registerPage = new RegisterPageObject(driver);
+		
 		emailAddress = "auto" + getRandom() + "@gmail.com";
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.get("https://demo.nopcommerce.com/");
+		homePage = new HomePageObject(driver);
 	}
 
 	@Test
-	public void TC_01_Register_Empty_Data() {
+	public void Register_01_Register_Empty_Data() {
 		homePage.clickToRegisterLink();
-
+		registerPage = new RegisterPageObject(driver);
 		registerPage.clickToRegisterButton();
 
 		Assert.assertEquals(registerPage.getErrorMessageFirstnameTextbox(), "First name is required.");
@@ -54,9 +54,9 @@ public class Level_03_Page_Object {
 	}
 
 	@Test
-	public void TC_02_Register_Invalid_Email() {
+	public void Register_02_Register_Invalid_Email() {
 		homePage.clickToRegisterLink();
-
+		registerPage = new RegisterPageObject(driver);
 		registerPage.inputToFirstNameTextBox(firstName);
 		registerPage.inputToLastNameTextBox(lastName);
 		registerPage.inputToEmailTextBox("123!@#");
@@ -70,9 +70,9 @@ public class Level_03_Page_Object {
 	}
 
 	@Test
-	public void TC_03_Register_Valid_Infomation() {
+	public void Register_03_Register_Valid_Infomation() {
 		homePage.clickToRegisterLink();
-
+		registerPage = new RegisterPageObject(driver);
 		registerPage.inputToFirstNameTextBox(firstName);
 		registerPage.inputToLastNameTextBox(lastName);
 		registerPage.inputToEmailTextBox(emailAddress);
@@ -90,10 +90,10 @@ public class Level_03_Page_Object {
 	}
 
 	@Test
-	public void TC_04_Register_Email_Exists() {
+	public void Register_04_Register_Email_Exists() {
 
 		homePage.clickToRegisterLink();
-
+		registerPage = new RegisterPageObject(driver);
 		registerPage.inputToFirstNameTextBox(firstName);
 		registerPage.inputToLastNameTextBox(lastName);
 		registerPage.inputToEmailTextBox(emailAddress);
@@ -108,9 +108,9 @@ public class Level_03_Page_Object {
 	}
 
 	@Test
-	public void TC_05_Register_Password_LessThan_6() {
+	public void Register_05_Register_Password_LessThan_6() {
 		homePage.clickToRegisterLink();
-
+		registerPage = new RegisterPageObject(driver);
 		registerPage.inputToFirstNameTextBox(firstName);
 		registerPage.inputToLastNameTextBox(lastName);
 		registerPage.inputToEmailTextBox("auto" + getRandom() + "@gmail.com");
@@ -125,9 +125,9 @@ public class Level_03_Page_Object {
 	}
 
 	@Test
-	public void TC_06_ConfirmPassword_NotMatch() {
+	public void Register_06_ConfirmPassword_NotMatch() {
 		homePage.clickToRegisterLink();
-
+		registerPage = new RegisterPageObject(driver);
 		registerPage.inputToFirstNameTextBox(firstName);
 		registerPage.inputToLastNameTextBox(lastName);
 		registerPage.inputToEmailTextBox("auto" + getRandom() + "@gmail.com");
