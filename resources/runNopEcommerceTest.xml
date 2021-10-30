@@ -25,4 +25,21 @@
      
     </classes>
   </test> <!-- Test -->
+  
+    <test name="Run on Headless Chrome">
+  <parameter name = "browser" value = "h-Chrome"/>
+    <classes> 
+      <class name="com.nopecommerce.user.Level_04_Multiple_Browser"/>
+     
+    </classes>
+  </test> <!-- Test -->
+  
+    <test name="Run on Headless Firefox">
+  <parameter name = "browser" value = "h-Firefox"/>
+    <classes> 
+      <class name="com.nopecommerce.user.Level_04_Multiple_Browser"/>
+     
+    </classes>
+  </test> <!-- Test -->
+  
 </suite> <!-- Suite -->
