@@ -1,5 +1,7 @@
 package com.nopecommerce.user;
 
-public class User_02_MyAccount {
+import common.BaseTest;
 
+public class User_02_MyAccount extends BaseTest{
+	
 }

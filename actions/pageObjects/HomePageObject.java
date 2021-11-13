@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 
 import common.BasePage;
+import common.PageGeneratorManager;
 import pageUIs.HomePageUI;
 
 public class HomePageObject extends BasePage {
@@ -12,9 +13,11 @@ public class HomePageObject extends BasePage {
 		this.driver = driver;
 	}
 	
-	public void clickToRegisterLink() {
+	public RegisterPageObject clickToRegisterLink() {
 		waitForElementClickAble(driver, HomePageUI.REGISTER_LINK);
 		clickToElement(driver, HomePageUI.REGISTER_LINK);
+		
+		return PageGeneratorManager.getRegisterPageeObject(driver);
 	}
 	
 	public void clickLogOutLink() {
@@ -22,9 +25,10 @@ public class HomePageObject extends BasePage {
 		clickToElement(driver, HomePageUI.LOGOUT_LINK);
 	}
 	
-	public void clickLoginLink() {
+	public LoginPageObject clickLoginLink() {
 		waitForElementClickAble(driver, HomePageUI.LOGIN_LINK);
 		clickToElement(driver, HomePageUI.LOGIN_LINK);
+		return PageGeneratorManager.getLoginPageObject(driver);
 	}
 	
 	public boolean MyAccountIsDisplay() {
