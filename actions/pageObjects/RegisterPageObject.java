@@ -3,6 +3,8 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 
 import common.BasePage;
+import common.PageGeneratorManager;
+import pageUIs.HomePageUI;
 import pageUIs.RegisterPageUI;
 
 public class RegisterPageObject extends BasePage {
@@ -65,6 +67,12 @@ public class RegisterPageObject extends BasePage {
 	public String getMessageRegisterEmailExists() {
 		waitForElementVisible(driver, RegisterPageUI.REGISTER_EMAIL_EXISTS_TEXT);
 		return getElementText(driver, RegisterPageUI.REGISTER_EMAIL_EXISTS_TEXT);
+	}
+	
+	public HomePageObject clickLogOutLink() {
+		waitForElementClickAble(driver, RegisterPageUI.LOGOUT_LINK);
+		clickToElement(driver, RegisterPageUI.LOGOUT_LINK);
+		return PageGeneratorManager.getHomPageObject(driver);
 	}
 	
 }

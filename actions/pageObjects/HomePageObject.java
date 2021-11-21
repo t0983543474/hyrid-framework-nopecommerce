@@ -20,10 +20,7 @@ public class HomePageObject extends BasePage {
 		return PageGeneratorManager.getRegisterPageeObject(driver);
 	}
 	
-	public void clickLogOutLink() {
-		waitForElementClickAble(driver, HomePageUI.LOGOUT_LINK);
-		clickToElement(driver, HomePageUI.LOGOUT_LINK);
-	}
+
 	
 	public LoginPageObject clickLoginLink() {
 		waitForElementClickAble(driver, HomePageUI.LOGIN_LINK);
@@ -34,6 +31,12 @@ public class HomePageObject extends BasePage {
 	public boolean MyAccountIsDisplay() {
 		waitForElementVisible(driver, HomePageUI.MYACCOUNT_LINK);
 		return isElementDisplay(driver, HomePageUI.MYACCOUNT_LINK);
+	}
+	
+	public CustomerInfoObject openCustomerInfoPage() {
+		waitForElementClickAble(driver, HomePageUI.MYACCOUNT_LINK);
+		clickToElement(driver, HomePageUI.MYACCOUNT_LINK);
+		return PageGeneratorManager.getCustomerPageObject(driver);
 	}
 
 }

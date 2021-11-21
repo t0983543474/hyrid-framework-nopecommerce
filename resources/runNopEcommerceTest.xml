@@ -5,7 +5,7 @@
   <test name="Run on Firefox">
   <parameter name = "browser" value = "FireFox"/>
     <classes> 
-      <class name="com.nopecommerce.user.Level_06_Page_Generator_Manager"/>
+      <class name="com.nopecommerce.user.Level_07_Switch_Page"/>
      
     </classes>
   </test> <!-- Test -->

@@ -85,7 +85,7 @@ public class Level_03_Page_Object_01_Register {
 
 		Assert.assertEquals(registerPage.getMessageRegisterSuccess(), "Your registration completed");
 
-		homePage.clickLogOutLink();
+		homePage = registerPage.clickLogOutLink();
 
 	}
 

@@ -54,7 +54,7 @@ public class Level_03_Page_Object_02_Login {
 
 		Assert.assertEquals(registerPage.getMessageRegisterSuccess(), "Your registration completed");
 		System.out.println("Re-condition: Logout");
-		homePage.clickLogOutLink();
+		homePage= registerPage.clickLogOutLink();
 
 	}
 	
@@ -96,7 +96,7 @@ public class Level_03_Page_Object_02_Login {
 	}
 	
 	@Test
-	public void Login_04_Login_With_EmailValid_Blank_Password() {
+	public void Login_04_Login_With_Email_Valid_Blank_Password() {
 		System.out.println("Login_04: Login with email valid and blank password");
 		homePage.clickLoginLink();
 		loginPage = new LoginPageObject(driver);

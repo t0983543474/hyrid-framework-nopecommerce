@@ -89,7 +89,7 @@ public class Level_06_Page_Generator_Manager extends BaseTest{
 
 		Assert.assertEquals(registerPage.getMessageRegisterSuccess(), "Your registration completed");
 
-		homePage.clickLogOutLink();
+		homePage = registerPage.clickLogOutLink();
 
 	}
 

@@ -91,7 +91,7 @@ public class Level_04_Multiple_Browser extends BaseTest{
 
 		Assert.assertEquals(registerPage.getMessageRegisterSuccess(), "Your registration completed");
 
-		homePage.clickLogOutLink();
+		homePage = registerPage.clickLogOutLink();
 
 	}
 

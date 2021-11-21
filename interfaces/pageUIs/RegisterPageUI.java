@@ -23,5 +23,5 @@ public class RegisterPageUI {
 	public static final String REGISTER_SUCCESS_TEXT = "//div[@class='result']";
 	public static final String REGISTER_EMAIL_EXISTS_TEXT = "//div[contains(@class, 'message-error')]//li";
 	
-	
+	public static final String LOGOUT_LINK = "//a[@class='ico-logout']";
 }

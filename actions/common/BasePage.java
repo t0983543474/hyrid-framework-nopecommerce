@@ -16,6 +16,12 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import okio.Timeout;
+import pageObjects.AddressesPageObject;
+import pageObjects.CustomerInfoObject;
+import pageObjects.MyProductReviewsObject;
+import pageObjects.RewardPonitObject;
+import pageUIs.BasePageUI;
+import pageUIs.CustomerInfoUI;
 
 public class BasePage {
 	
@@ -354,5 +360,28 @@ public class BasePage {
 		explicitWait.until(ExpectedConditions.elementToBeClickable(getByXpath(xpathLocator)));
 	}
 	
+	public AddressesPageObject openAddressPage(WebDriver driver) {
+		waitForElementClickAble(driver, BasePageUI.ADDRESSES_LINK);
+		clickToElement(driver, BasePageUI.ADDRESSES_LINK);
+		return PageGeneratorManager.getAddressesPageObject(driver);
+	}
+	
+	public CustomerInfoObject openCustomerInfoPage(WebDriver driver) {
+		waitForElementClickAble(driver, BasePageUI.CUSTOMER_INFO_LINK);
+		clickToElement(driver, BasePageUI.CUSTOMER_INFO_LINK);
+		return PageGeneratorManager.getCustomerPageObject(driver);
+	}
+	
+	public MyProductReviewsObject openMyProductReviewsPage(WebDriver driver) {
+		waitForElementClickAble(driver, BasePageUI.MY_PRODUCE_REVIEWS_LINK);
+		clickToElement(driver, BasePageUI.MY_PRODUCE_REVIEWS_LINK);
+		return PageGeneratorManager.getMyProductReviewsObject(driver);
+	}
+	
+	public RewardPonitObject openRewardPonitPage(WebDriver driver) {
+		waitForElementClickAble(driver, BasePageUI.REWARD_POINTS_LINK);
+		clickToElement(driver, BasePageUI.REWARD_POINTS_LINK);
+		return PageGeneratorManager.getRewardPonitObject(driver);
+	}
 	private long longtime = 30;
 }

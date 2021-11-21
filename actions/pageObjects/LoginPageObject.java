@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 
 import common.BasePage;
+import common.PageGeneratorManager;
 import pageUIs.LoginPageUI;
 
 public class LoginPageObject extends BasePage {
@@ -29,9 +30,10 @@ public class LoginPageObject extends BasePage {
 		return getElementText(driver, LoginPageUI.MESSAGE_ERROR_SUMARY_TEXT);
 	}
 	
-	public void clickLoginButton() {
+	public HomePageObject clickLoginButton() {
 		waitForElementClickAble(driver, LoginPageUI.LOGIN_BTN);
 		clickToElement(driver, LoginPageUI.LOGIN_BTN);
+		return PageGeneratorManager.getHomPageObject(driver);
 	}
 
 }
