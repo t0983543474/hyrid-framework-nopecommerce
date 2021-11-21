@@ -1,4 +1,4 @@
-package pageUIs;
+package pageUIs.nopecommerce.user;
 
 public class BasePageUI {
 	public static final String CUSTOMER_INFO_LINK = "//div[@class='listbox']//a[text()='Addresses']";

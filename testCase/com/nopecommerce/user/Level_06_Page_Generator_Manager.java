@@ -5,8 +5,8 @@ import org.testng.annotations.Test;
 
 import common.BaseTest;
 import common.PageGeneratorManager;
-import pageObjects.HomePageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.nopecommerce.user.UserHomePageObject;
+import pageObjects.nopecommerce.user.UserRegisterPageObject;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -22,8 +22,8 @@ public class Level_06_Page_Generator_Manager extends BaseTest{
 
 	
 	WebDriver driver;
-	HomePageObject homePage;
-	RegisterPageObject registerPage;
+	UserHomePageObject homePage;
+	UserRegisterPageObject registerPage;
 	String projectPath = System.getProperty("user.dir");
 	String emailAddress;
 	String firstName = "Test", lastName = "Automation", password = "123456", confirmPassword = "123456";

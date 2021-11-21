@@ -2,8 +2,8 @@ package com.nopecommerce.user;
 
 import org.testng.annotations.Test;
 
-import pageObjects.HomePageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.nopecommerce.user.UserHomePageObject;
+import pageObjects.nopecommerce.user.UserRegisterPageObject;
 
 import org.testng.annotations.BeforeClass;
 
@@ -18,8 +18,8 @@ import org.testng.annotations.AfterClass;
 public class Level_03_Page_Object_01_Register {
 
 	WebDriver driver;
-	HomePageObject homePage;
-	RegisterPageObject registerPage;
+	UserHomePageObject homePage;
+	UserRegisterPageObject registerPage;
 	String projectPath = System.getProperty("user.dir");
 	String emailAddress;
 	String firstName = "Test", lastName = "Automation", password = "123456", confirmPassword = "123456";
@@ -32,13 +32,13 @@ public class Level_03_Page_Object_01_Register {
 		emailAddress = "auto" + getRandom() + "@gmail.com";
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.get("https://demo.nopcommerce.com/");
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 	}
 
 	@Test
 	public void Register_01_Register_Empty_Data() {
 		homePage.clickToRegisterLink();
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		registerPage.clickToRegisterButton();
 
 		Assert.assertEquals(registerPage.getErrorMessageFirstnameTextbox(), "First name is required.");
@@ -56,7 +56,7 @@ public class Level_03_Page_Object_01_Register {
 	@Test
 	public void Register_02_Register_Invalid_Email() {
 		homePage.clickToRegisterLink();
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		registerPage.inputToFirstNameTextBox(firstName);
 		registerPage.inputToLastNameTextBox(lastName);
 		registerPage.inputToEmailTextBox("123!@#");
@@ -72,7 +72,7 @@ public class Level_03_Page_Object_01_Register {
 	@Test
 	public void Register_03_Register_Valid_Infomation() {
 		homePage.clickToRegisterLink();
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		registerPage.inputToFirstNameTextBox(firstName);
 		registerPage.inputToLastNameTextBox(lastName);
 		registerPage.inputToEmailTextBox(emailAddress);
@@ -93,7 +93,7 @@ public class Level_03_Page_Object_01_Register {
 	public void Register_04_Register_Email_Exists() {
 
 		homePage.clickToRegisterLink();
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		registerPage.inputToFirstNameTextBox(firstName);
 		registerPage.inputToLastNameTextBox(lastName);
 		registerPage.inputToEmailTextBox(emailAddress);
@@ -110,7 +110,7 @@ public class Level_03_Page_Object_01_Register {
 	@Test
 	public void Register_05_Register_Password_LessThan_6() {
 		homePage.clickToRegisterLink();
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		registerPage.inputToFirstNameTextBox(firstName);
 		registerPage.inputToLastNameTextBox(lastName);
 		registerPage.inputToEmailTextBox("auto" + getRandom() + "@gmail.com");
@@ -127,7 +127,7 @@ public class Level_03_Page_Object_01_Register {
 	@Test
 	public void Register_06_ConfirmPassword_NotMatch() {
 		homePage.clickToRegisterLink();
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		registerPage.inputToFirstNameTextBox(firstName);
 		registerPage.inputToLastNameTextBox(lastName);
 		registerPage.inputToEmailTextBox("auto" + getRandom() + "@gmail.com");

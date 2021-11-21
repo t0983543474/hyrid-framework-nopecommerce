@@ -7,7 +7,7 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 import common.BasePageFactory;
-import pageUIs.RegisterPageUI;
+import pageUIs.nopecommerce.user.UserRegisterPageUI;
 
 public class RegisterPageObject extends BasePageFactory {
 	

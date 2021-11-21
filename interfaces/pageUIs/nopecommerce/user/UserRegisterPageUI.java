@@ -1,6 +1,6 @@
-package pageUIs;
+package pageUIs.nopecommerce.user;
 
-public class RegisterPageUI {
+public class UserRegisterPageUI {
 	
 	public static final String REGISTER_BTN = "//button[@id='register-button']";
 	

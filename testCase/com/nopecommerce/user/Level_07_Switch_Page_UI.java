@@ -5,13 +5,13 @@ import org.testng.annotations.Test;
 
 import common.BaseTest;
 import common.PageGeneratorManager;
-import pageObjects.AddressesPageObject;
-import pageObjects.CustomerInfoObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.MyProductReviewsObject;
-import pageObjects.RegisterPageObject;
-import pageObjects.RewardPonitObject;
+import pageObjects.nopecommerce.user.UserAddressesPageObject;
+import pageObjects.nopecommerce.user.UserCustomerInfoObject;
+import pageObjects.nopecommerce.user.UserHomePageObject;
+import pageObjects.nopecommerce.user.UserLoginPageObject;
+import pageObjects.nopecommerce.user.UserMyProductReviewsObject;
+import pageObjects.nopecommerce.user.UserRegisterPageObject;
+import pageObjects.nopecommerce.user.UserRewardPonitObject;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -23,17 +23,17 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
-public class Level_07_Switch_Page extends BaseTest{
+public class Level_07_Switch_Page_UI extends BaseTest{
 
 	
 	WebDriver driver;
-	HomePageObject homePage;
-	RegisterPageObject registerPage;
-	LoginPageObject loginPage;
-	CustomerInfoObject customerInfoPage;
-	AddressesPageObject addressesPage ;
-	MyProductReviewsObject myProductReviewsPage;
-	RewardPonitObject rewardPonitPage;
+	UserHomePageObject homePage;
+	UserRegisterPageObject registerPage;
+	UserLoginPageObject loginPage;
+	UserCustomerInfoObject customerInfoPage;
+	UserAddressesPageObject addressesPage ;
+	UserMyProductReviewsObject myProductReviewsPage;
+	UserRewardPonitObject rewardPonitPage;
 	String projectPath = System.getProperty("user.dir");
 	String emailAddress;
 	String firstName = "Test", lastName = "Automation", password = "123456", confirmPassword = "123456";
