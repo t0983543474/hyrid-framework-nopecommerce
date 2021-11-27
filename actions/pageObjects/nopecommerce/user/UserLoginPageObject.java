@@ -33,7 +33,14 @@ public class UserLoginPageObject extends BasePage {
 	public UserHomePageObject clickLoginButton() {
 		waitForElementClickAble(driver, UserLoginPageUI.LOGIN_BTN);
 		clickToElement(driver, UserLoginPageUI.LOGIN_BTN);
-		return PageGeneratorManager.getHomPageObject(driver);
+		return PageGeneratorManager.getUserHomPageObject(driver);
+	}
+	
+	public UserHomePageObject LoginPortalUser(String email , String password) {
+		inputToEmail(email);
+		inputToPassword(password);
+		
+		return clickLoginButton();
 	}
 
 }

@@ -72,7 +72,17 @@ public class UserRegisterPageObject extends BasePage {
 	public UserHomePageObject clickLogOutLink() {
 		waitForElementClickAble(driver, UserRegisterPageUI.LOGOUT_LINK);
 		clickToElement(driver, UserRegisterPageUI.LOGOUT_LINK);
-		return PageGeneratorManager.getHomPageObject(driver);
+		return PageGeneratorManager.getUserHomPageObject(driver);
+	}
+	
+	public void RegisterToPortalUser(String firstName , String lastName, String emailAddress, String password, String confirmPassword) {
+		inputToFirstNameTextBox(firstName);
+		inputToLastNameTextBox(lastName);
+		inputToEmailTextBox(emailAddress);
+		inputToPasswordTextBox(password);
+		inputToConfirmPasswordTextBox(confirmPassword);
+
+		 clickToRegisterButton();
 	}
 	
 }

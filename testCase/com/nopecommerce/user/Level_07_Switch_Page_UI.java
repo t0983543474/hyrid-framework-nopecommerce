@@ -46,7 +46,7 @@ public class Level_07_Switch_Page_UI extends BaseTest{
 		
 		emailAddress = "auto" + getRandom() + "@gmail.com";
 		
-		homePage = PageGeneratorManager.getHomPageObject(driver);
+		homePage = PageGeneratorManager.getUserHomPageObject(driver);
 	}
 
 	
@@ -94,15 +94,15 @@ public class Level_07_Switch_Page_UI extends BaseTest{
 	
 	@Test
 	public void User_04_Switch_Page() {
-		addressesPage = customerInfoPage.openAddressPage(driver);
+		addressesPage = customerInfoPage.openUserAddressPage(driver);
 		
-		myProductReviewsPage = addressesPage.openMyProductReviewsPage(driver);
+		myProductReviewsPage = addressesPage.openUserMyProductReviewsPage(driver);
 		
-		rewardPonitPage  = myProductReviewsPage.openRewardPonitPage(driver);
+		rewardPonitPage  = myProductReviewsPage.openUserRewardPonitPage(driver);
 		
-		addressesPage = myProductReviewsPage.openAddressPage(driver);
+		addressesPage = myProductReviewsPage.openUserAddressPage(driver);
 		
-		myProductReviewsPage = addressesPage.openMyProductReviewsPage(driver);
+		myProductReviewsPage = addressesPage.openUserMyProductReviewsPage(driver);
 	}
 	
 
@@ -113,9 +113,5 @@ public class Level_07_Switch_Page_UI extends BaseTest{
 		driver.quit();
 	}
 
-	public int getRandom() {
-		Random ran = new Random();
-		return ran.nextInt(9999);
-	}
 
 }

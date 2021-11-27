@@ -17,7 +17,7 @@ public class UserHomePageObject extends BasePage {
 		waitForElementClickAble(driver, UserHomePageUI.REGISTER_LINK);
 		clickToElement(driver, UserHomePageUI.REGISTER_LINK);
 		
-		return PageGeneratorManager.getRegisterPageeObject(driver);
+		return PageGeneratorManager.getUserRegisterPageeObject(driver);
 	}
 	
 
@@ -25,7 +25,7 @@ public class UserHomePageObject extends BasePage {
 	public UserLoginPageObject clickLoginLink() {
 		waitForElementClickAble(driver, UserHomePageUI.LOGIN_LINK);
 		clickToElement(driver, UserHomePageUI.LOGIN_LINK);
-		return PageGeneratorManager.getLoginPageObject(driver);
+		return PageGeneratorManager.getUserLoginPageObject(driver);
 	}
 	
 	public boolean MyAccountIsDisplay() {
@@ -36,7 +36,7 @@ public class UserHomePageObject extends BasePage {
 	public UserCustomerInfoObject openCustomerInfoPage() {
 		waitForElementClickAble(driver, UserHomePageUI.MYACCOUNT_LINK);
 		clickToElement(driver, UserHomePageUI.MYACCOUNT_LINK);
-		return PageGeneratorManager.getCustomerPageObject(driver);
+		return PageGeneratorManager.getUserCustomerPageObject(driver);
 	}
 
 }

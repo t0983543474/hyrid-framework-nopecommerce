@@ -36,7 +36,7 @@ public class Level_06_Page_Generator_Manager extends BaseTest{
 		
 		emailAddress = "auto" + getRandom() + "@gmail.com";
 		
-		homePage = PageGeneratorManager.getHomPageObject(driver);
+		homePage = PageGeneratorManager.getUserHomPageObject(driver);
 	}
 
 	@Test
