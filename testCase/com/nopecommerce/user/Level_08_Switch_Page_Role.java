@@ -70,7 +70,7 @@ public class Level_08_Switch_Page_Role extends BaseTest{
 	    adminDashboardPage = adminLoginPage.LoginToAdmiPage(adminEmail, adminPassword);
 	    
 	    
-		Assert.assertTrue(adminDashboardPage.getTextHeadingDashBoard().contains("Welcome to your store!"));
+		Assert.assertTrue(adminDashboardPage.getTextHeadingDashBoard().contains("Dashboard"));
 		
 		adminLoginPage = adminDashboardPage.clickLogoutLinkAtAdminPage(driver);
 	}
