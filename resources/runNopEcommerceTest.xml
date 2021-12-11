@@ -5,7 +5,7 @@
   <test name="Run on Firefox">
   <parameter name = "browser" value = "FireFox"/>
     <classes> 
-      <class name="com.nopecommerce.user.Level_08_Switch_Page_Role"/>
+      <class name="com.nopecommerce.user.Level_09_Dynamic_Locator"/>
      
     </classes>
   </test> <!-- Test -->
