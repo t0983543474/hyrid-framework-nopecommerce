@@ -82,7 +82,7 @@ public class Level_09_Dynamic_Locator extends BaseTest{
 	@Test
 	public void User_03_Customer_Info() {
 		customerInfoPage =  homePage.openCustomerInfoPage();
-		Assert.assertTrue(customerInfoPage.isCustomerInforPageDisplay());
+		Assert.assertTrue(customerInfoPage.isCustomerInforPageDisplay()); 
 	}
 	
 	
