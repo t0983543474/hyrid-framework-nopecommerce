@@ -85,6 +85,7 @@ public class Level_09_Dynamic_Locator extends BaseTest{
 		Assert.assertTrue(customerInfoPage.isCustomerInforPageDisplay());
 	}
 	
+	
 	@Test
 	public void User_04_Switch_Page() {
 		addressesPage = (UserAddressesPageObject)customerInfoPage.openMyAccountPageByName(driver, "Addresses");

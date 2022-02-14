@@ -2,8 +2,8 @@
 <suite name="NopEcommerce" >
 
 
-  <test name="Run on Firefox">
-  <parameter name = "browser" value = "FireFox"/>
+  <test name="Run on Chrome">
+  <parameter name = "browser" value = "Chrome"/>
     <classes> 
       <class name="com.nopecommerce.user.Level_09_Dynamic_Locator"/>
      
