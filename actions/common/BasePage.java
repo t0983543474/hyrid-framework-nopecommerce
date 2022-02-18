@@ -265,6 +265,12 @@ public class BasePage {
 		return getWebElement(driver, locator).isDisplayed();
 	}
 	
+	protected boolean isElementDisplay(WebDriver driver, String locator, String...dynamicValue) {
+		String typeLocator = getDynamicXpath(locator, dynamicValue);
+		return getWebElement(driver, typeLocator).isDisplayed();
+	}
+	
+	
 	protected boolean isElementEnabled(WebDriver driver, String locator) {
 		return getWebElement(driver, locator).isEnabled();
 	}

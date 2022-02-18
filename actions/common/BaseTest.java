@@ -99,6 +99,13 @@ public class BaseTest {
 	}
 
 	
-	
+	protected void sleepSecond(long number) {
+		try {
+			Thread.sleep(number*1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 }
