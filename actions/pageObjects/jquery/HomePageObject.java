@@ -1,6 +1,11 @@
 package pageObjects.jquery;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import common.BasePage;
 import pageUIs.jquery.HomePageUI;
@@ -23,4 +28,29 @@ public class HomePageObject extends BasePage {
 		return isElementDisplay(driver,HomePageUI.PAGINATION_ACTIVE_NUMBER,  number);
 	}
 
+	public void enterValueSearchHeading(String label , String value) {
+		waitForElementVisible(driver, HomePageUI.INPUT_SEARCH_TEXT_BY_LABEL, label);
+		sendKeyToElement(driver, HomePageUI.INPUT_SEARCH_TEXT_BY_LABEL, value, label);
+		pressKeyToElement(driver, HomePageUI.INPUT_SEARCH_TEXT_BY_LABEL, Keys.ENTER, label);
+	}
+	
+	public void getDataTable() {
+		int totalPage = getElementSize(driver, HomePageUI.TOTAL_PAGINATION);
+		List<String> dataListAllPage = new ArrayList<String>();
+		for (int i = 1; i <= totalPage; i++) {
+			clickToElement(driver, HomePageUI.PAGINATION_NUMBER, String.valueOf(i));
+			sleepSecond(1);
+			
+			List<WebElement> dataListInPage = getWebElements(driver, HomePageUI.DATA_ROW);
+			
+			for (WebElement webElement : dataListInPage) {
+				dataListAllPage.add(webElement.getText());
+			}
+		}
+		
+		for (String value : dataListAllPage) {
+			System.out.println("------");
+			System.out.println(value);
+		}
+	}
 }

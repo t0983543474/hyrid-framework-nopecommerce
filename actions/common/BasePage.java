@@ -6,6 +6,7 @@ import java.util.Set;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -56,7 +57,7 @@ public class BasePage {
 		driver.navigate().forward();;
 	}
 	
-	protected void freshCurrentPage(WebDriver driver) {
+	public void freshCurrentPage(WebDriver driver) {
 		driver.navigate().refresh();
 	}
 	
@@ -130,17 +131,17 @@ public class BasePage {
 		}else if(locatorType.startsWith("XPATH") || locatorType.startsWith("Xpath") || locatorType.startsWith("xpath")) {
 			by= By.xpath(locatorType.substring(6));
 		}else if (locatorType.startsWith("CSS") || locatorType.startsWith("Css") || locatorType.startsWith("css")) {
-			by= By.xpath(locatorType.substring(4));
+			by= By.cssSelector(locatorType.substring(4));
 		}else if(locatorType.startsWith("NAME") || locatorType.startsWith("Name") || locatorType.startsWith("name")) {
-			by= By.xpath(locatorType.substring(5));
+			by= By.name(locatorType.substring(5));
 		}else if(locatorType.startsWith("TAGNAME") || locatorType.startsWith("TagName") || locatorType.startsWith("tagname")) {
-			by= By.xpath(locatorType.substring(8));
+			by= By.tagName(locatorType.substring(8));
 		}else if(locatorType.startsWith("CLASSNAME") || locatorType.startsWith("ClassName") || locatorType.startsWith("classname")) {
-			by= By.xpath(locatorType.substring(10));
+			by= By.className(locatorType.substring(10));
 		}else if(locatorType.startsWith("PARTIALLINKTEXT") || locatorType.startsWith("PartialLinkText") || locatorType.startsWith("partiallinktext")) {
-			by= By.xpath(locatorType.substring(16));
+			by= By.partialLinkText(locatorType.substring(16));
 		}else if(locatorType.startsWith("LINKTEXT") || locatorType.startsWith("LinkText") || locatorType.startsWith("linktext")) {
-			by= By.xpath(locatorType.substring(9));
+			by= By.linkText(locatorType.substring(9));
 		}else {
 			throw new RuntimeException("Locator not correct format");
 		}
@@ -158,11 +159,11 @@ public class BasePage {
 		return locatorType;
 	}
 	
-	protected WebElement getWebElement(WebDriver driver, String locator) {
+	public WebElement getWebElement(WebDriver driver, String locator) {
 		return driver.findElement(getByLocatorType(locator));
 	}
 	
-	protected List<WebElement> getWebElements(WebDriver driver, String locator){
+	public List<WebElement> getWebElements(WebDriver driver, String locator){
 		return driver.findElements(getByLocatorType(locator));
 	}
 	
@@ -182,6 +183,12 @@ public class BasePage {
 		element.sendKeys(value);
 	}
 	
+	protected void sendKeyToElement(WebDriver driver, String locatorType, String value, String...dynamicValue) {
+		 locatorType = getDynamicXpath(locatorType, dynamicValue);
+		WebElement element = getWebElement(driver, locatorType);
+		element.clear();
+		element.sendKeys(value);
+	}
 	
 	
 	protected void selectItemDefaultDropdowList(WebDriver driver, String locator, String item) {
@@ -289,8 +296,15 @@ public class BasePage {
 	
 	protected void hoverMouseToElement(WebDriver driver, String locator) {
 		Actions action = new Actions(driver);
-		action.moveToElement(getWebElement(driver, locator));
+		action.moveToElement(getWebElement(driver, locator)).perform();
 		
+	}
+	
+	public void pressKeyToElement(WebDriver driver,String typeLocator,  Keys key,  String...dynamicValue) {
+		Actions action = new Actions(driver);
+		typeLocator = getDynamicXpath(typeLocator, dynamicValue);
+		action.sendKeys(getWebElement(driver, typeLocator), key).perform();
+//		action.sendKeys(keys)(getWebElement(driver, locator));
 	}
 	
 	

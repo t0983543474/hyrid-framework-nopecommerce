@@ -57,14 +57,26 @@ public class Level_10_DataTable_DataGrid extends BaseTest{
 
 	@Test
 	public void Table_02_Enter_Searchbox() {
+		homePage.freshCurrentPage(driver);
 
-	
+		homePage.enterValueSearchHeading("Country", "Afghanistan");
+		sleepSecond(1);
 		
+		
+		homePage.enterValueSearchHeading("Females", "384187");
+		sleepSecond(1);
+		
+		homePage.enterValueSearchHeading("Males", "407124");
+		sleepSecond(1);
+		
+		homePage.enterValueSearchHeading("Total", "791312");
+		sleepSecond(1);
 	}
 	
 	@Test
-	public void Table_03() {
-		
+	public void Table_03_GetDataTable() {
+		homePage.freshCurrentPage(driver);
+		homePage.getDataTable();
 	}
 	
 	
