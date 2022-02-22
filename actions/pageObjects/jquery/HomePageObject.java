@@ -53,4 +53,32 @@ public class HomePageObject extends BasePage {
 			System.out.println(value);
 		}
 	}
+	
+	public void inputDataOnRowAtColumn(String ColumnName, String row, String value) {
+		int columnNumber = getElementSize(driver, HomePageUI.COLUMN_KEY_NUMBER,ColumnName) + 1;
+		waitForElementVisible(driver, HomePageUI.INPUT_TEXTBOX_ROW_AT_COLUMN, row, String.valueOf(columnNumber));
+		sendKeyToElement(driver, HomePageUI.INPUT_TEXTBOX_ROW_AT_COLUMN, value, row, String.valueOf(columnNumber));
+	}
+	
+	public void loadDataDummy() {
+		waitForElementClickAble(driver, HomePageUI.LOAD_DATA_BUTTON);
+		clickToElement(driver,  HomePageUI.LOAD_DATA_BUTTON);
+	}
+	
+	public void checkDataOnRowAtColumn(String ColumnName, String row, String value) {
+		int columnNumber = getElementSize(driver, HomePageUI.COLUMN_KEY_NUMBER,ColumnName) + 1;
+		waitForElementClickAble(driver, HomePageUI.CHECKBOX_TEXTBOX_ROW_AT_COLUMN, row, String.valueOf(columnNumber));
+		checkToDefaultCheckboxRadio(driver, HomePageUI.CHECKBOX_TEXTBOX_ROW_AT_COLUMN, row, String.valueOf(columnNumber));
+		
+	}
+	public void uncheckDataOnRowAtColumn(String ColumnName, String row, String value) {
+		int columnNumber = getElementSize(driver, HomePageUI.COLUMN_KEY_NUMBER,ColumnName) + 1;
+		waitForElementClickAble(driver, HomePageUI.CHECKBOX_TEXTBOX_ROW_AT_COLUMN, row, String.valueOf(columnNumber));
+		uncheckDefaultToCheckbox(driver, HomePageUI.CHECKBOX_TEXTBOX_ROW_AT_COLUMN, row, String.valueOf(columnNumber));
+		
+	}
+	
+	public void selectDataOnRowAtColumn(String ColumnName, String row, String value) {
+		
+	}
 }

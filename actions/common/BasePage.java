@@ -126,7 +126,7 @@ public class BasePage {
 	
 	private By getByLocatorType(String locatorType) {
 		By by = null;
-		if(locatorType.startsWith("ID") || locatorType.startsWith("Id") || locatorType.startsWith("ID")) {
+		if(locatorType.startsWith("ID") || locatorType.startsWith("Id") || locatorType.startsWith("id") ) {
 			by=  By.id(locatorType.substring(3));
 		}else if(locatorType.startsWith("XPATH") || locatorType.startsWith("Xpath") || locatorType.startsWith("xpath")) {
 			by= By.xpath(locatorType.substring(6));
@@ -254,11 +254,24 @@ public class BasePage {
 		return getWebElements(driver, locator).size();
 	}
 	
+	protected int getElementSize(WebDriver driver, String typeLocator, String...dynamicValue) {
+		typeLocator = getDynamicXpath(typeLocator, dynamicValue);
+		return getWebElements(driver, typeLocator).size();
+	}
+	
 	protected void checkToDefaultCheckboxRadio(WebDriver driver, String locator) {
 		WebElement element = getWebElement(driver, locator);
 		if(!element.isSelected()) {
 			element.click();
-		}
+		}   
+	}
+	
+	protected void checkToDefaultCheckboxRadio(WebDriver driver, String typeLocator, String...dynamicValue) {
+		typeLocator = getDynamicXpath(typeLocator, dynamicValue);
+		WebElement element = getWebElement(driver, typeLocator);
+		if(!element.isSelected()) {
+			element.click();
+		}   
 	}
 	
 	protected void uncheckDefaultToCheckbox(WebDriver driver, String locator) {
@@ -266,6 +279,13 @@ public class BasePage {
 		if(element.isSelected()) {
 			element.click();
 		}
+	}
+	protected void uncheckDefaultToCheckbox(WebDriver driver, String typeLocator, String...dynamicValue) {
+		typeLocator = getDynamicXpath(typeLocator, dynamicValue);
+		WebElement element = getWebElement(driver, typeLocator);
+		if(element.isSelected()) {
+			element.click();
+		}   
 	}
 	
 	protected boolean isElementDisplay(WebDriver driver, String locator) {

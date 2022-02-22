@@ -35,7 +35,7 @@ public class Level_10_DataTable_DataGrid extends BaseTest{
 
 	
 
-	@Test
+//	@Test
 	public void Table_01_Paging() {
 		homePage.clickPageNumber("10");
 		sleepSecond(2);
@@ -55,7 +55,7 @@ public class Level_10_DataTable_DataGrid extends BaseTest{
 		
 	}
 
-	@Test
+//	@Test
 	public void Table_02_Enter_Searchbox() {
 		homePage.freshCurrentPage(driver);
 
@@ -73,7 +73,7 @@ public class Level_10_DataTable_DataGrid extends BaseTest{
 		sleepSecond(1);
 	}
 	
-	@Test
+//	@Test
 	public void Table_03_GetDataTable() {
 		homePage.freshCurrentPage(driver);
 		homePage.getDataTable();
@@ -81,7 +81,18 @@ public class Level_10_DataTable_DataGrid extends BaseTest{
 	
 	
 	@Test
-	public void Table_04() {
+	public void Table_04_Input_Data_Table() {
+		homePage.loadDataDummy();
+		homePage.inputDataOnRowAtColumn("Album", "1", "Trang");
+		
+		homePage.inputDataOnRowAtColumn("Artist", "2", "Itzy");
+		
+		homePage.inputDataOnRowAtColumn("Year", "3", "1995");
+		
+		homePage.inputDataOnRowAtColumn("Price", "4", "2000");
+		
+//		homePage.inputDataonRowInColumn("Album", "1", "Trang");
+		sleepSecond(5);
 		
 	}
 	
