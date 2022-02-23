@@ -196,6 +196,13 @@ public class BasePage {
 		select.selectByVisibleText(item);
 	}
 	
+	protected void selectItemDefaultDropdowList(WebDriver driver, String locatorType, String item, String...dynamicValue) {
+		 locatorType = getDynamicXpath(locatorType, dynamicValue);
+		Select select = new Select(getWebElement(driver, locatorType));
+		select.selectByVisibleText(item);
+	}
+	
+	
 	protected String getSelectedItemDefaultDropdowList (WebDriver driver, String locator) {
 		Select select = new Select(getWebElement(driver, locator));
 		return select.getFirstSelectedOption().getText();

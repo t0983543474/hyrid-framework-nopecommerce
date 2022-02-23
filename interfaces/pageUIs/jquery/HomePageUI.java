@@ -12,4 +12,5 @@ public class HomePageUI {
 	public final static String INPUT_TEXTBOX_ROW_AT_COLUMN = "xpath=//tbody//tr[%s]//td[%s]//input";
 	public final static String LOAD_DATA_BUTTON = "id=btnLoad";
 	public final static String CHECKBOX_TEXTBOX_ROW_AT_COLUMN = "xpath=//tbody//tr[%s]//td[%s]//input[@type='checkbox']";
+	public final static String SELECT_DROPDOWN_ROW_AT_COLUMN = "xpath=//tbody//tr[%s]//td[%s]//select";
 }

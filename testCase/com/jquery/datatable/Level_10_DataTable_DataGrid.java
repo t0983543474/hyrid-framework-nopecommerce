@@ -91,8 +91,24 @@ public class Level_10_DataTable_DataGrid extends BaseTest{
 		
 		homePage.inputDataOnRowAtColumn("Price", "4", "2000");
 		
-//		homePage.inputDataonRowInColumn("Album", "1", "Trang");
+		homePage.selectDataOnRowAtColumn("Origin", "5", "Korea");
+		
+		homePage.checkDataOnRowAtColumn("With Poster?", "3");
+		
+		homePage.checkDataOnRowAtColumn("With Poster?", "5");
+		
+		homePage.uncheckDataOnRowAtColumn("With Poster?", "1");
+		
+		homePage.uncheckDataOnRowAtColumn("With Poster?", "2");
+		
+		homePage.uncheckDataOnRowAtColumn("With Poster?", "4");
+
 		sleepSecond(5);
+		
+	}
+	
+	@Test
+	public void Table_05_Action_On_Table() {
 		
 	}
 	

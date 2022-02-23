@@ -65,13 +65,13 @@ public class HomePageObject extends BasePage {
 		clickToElement(driver,  HomePageUI.LOAD_DATA_BUTTON);
 	}
 	
-	public void checkDataOnRowAtColumn(String ColumnName, String row, String value) {
+	public void checkDataOnRowAtColumn(String ColumnName, String row) {
 		int columnNumber = getElementSize(driver, HomePageUI.COLUMN_KEY_NUMBER,ColumnName) + 1;
 		waitForElementClickAble(driver, HomePageUI.CHECKBOX_TEXTBOX_ROW_AT_COLUMN, row, String.valueOf(columnNumber));
 		checkToDefaultCheckboxRadio(driver, HomePageUI.CHECKBOX_TEXTBOX_ROW_AT_COLUMN, row, String.valueOf(columnNumber));
 		
 	}
-	public void uncheckDataOnRowAtColumn(String ColumnName, String row, String value) {
+	public void uncheckDataOnRowAtColumn(String ColumnName, String row) {
 		int columnNumber = getElementSize(driver, HomePageUI.COLUMN_KEY_NUMBER,ColumnName) + 1;
 		waitForElementClickAble(driver, HomePageUI.CHECKBOX_TEXTBOX_ROW_AT_COLUMN, row, String.valueOf(columnNumber));
 		uncheckDefaultToCheckbox(driver, HomePageUI.CHECKBOX_TEXTBOX_ROW_AT_COLUMN, row, String.valueOf(columnNumber));
@@ -79,6 +79,8 @@ public class HomePageObject extends BasePage {
 	}
 	
 	public void selectDataOnRowAtColumn(String ColumnName, String row, String value) {
-		
+		int columnNumber = getElementSize(driver, HomePageUI.COLUMN_KEY_NUMBER,ColumnName) + 1;
+		waitForElementClickAble(driver, HomePageUI.SELECT_DROPDOWN_ROW_AT_COLUMN, row, String.valueOf(columnNumber));
+		selectItemDefaultDropdowList(driver, HomePageUI.SELECT_DROPDOWN_ROW_AT_COLUMN, value, row, String.valueOf(columnNumber));
 	}
 }
