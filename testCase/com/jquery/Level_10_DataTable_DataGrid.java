@@ -1,4 +1,4 @@
-package com.jquery.datatable;
+package com.jquery;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
