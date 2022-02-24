@@ -8,8 +8,8 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import common.BaseTest;
-import common.PageGeneratorManager;
-import pageObjects.jquery.HomePageObject;
+import pageObjects.jquery.dataTable.HomePageObject;
+import pageObjects.jquery.dataTable.PageGeneratorManager;
 import pageObjects.nopecommerce.user.UserAddressesPageObject;
 import pageObjects.nopecommerce.user.UserCustomerInfoObject;
 import pageObjects.nopecommerce.user.UserHomePageObject;

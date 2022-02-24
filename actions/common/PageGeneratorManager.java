@@ -2,7 +2,7 @@ package common;
 
 import org.openqa.selenium.WebDriver;
 
-import pageObjects.jquery.HomePageObject;
+import pageObjects.jquery.dataTable.HomePageObject;
 import pageObjects.nopecommerce.admin.AdminDashboardPageObject;
 import pageObjects.nopecommerce.admin.AdminLoginPageObject;
 import pageObjects.nopecommerce.user.UserAddressesPageObject;
@@ -52,9 +52,7 @@ public class PageGeneratorManager {
 
 	// Jquery DataTable 
 
-	public static HomePageObject getHomePageObject(WebDriver driver) {
-		return new HomePageObject(driver);
-	}
+
 
 
 }
