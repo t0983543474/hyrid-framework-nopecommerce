@@ -1,5 +1,6 @@
 package common;
 
+import java.io.File;
 import java.util.List;
 import java.util.Set;
 
@@ -190,6 +191,14 @@ public class BasePage {
 		element.sendKeys(value);
 	}
 	
+	protected void uploadFilesBySendKey(WebDriver driver, String locatorXpath, String...fileNames) {
+//		String separator = System.gets
+//		String filePath =  System.getProperty("user.dir") + File.separator() ;
+		for (String fileName : fileNames) {
+//			sendk
+		}
+//		getWebElement(driver, locatorXpath)
+	}
 	
 	protected void selectItemDefaultDropdowList(WebDriver driver, String locator, String item) {
 		Select select = new Select(getWebElement(driver, locator));

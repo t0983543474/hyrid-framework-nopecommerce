@@ -33,22 +33,11 @@ public class Level_11_Uppload_Files extends BaseTest{
 	}
 
 //	@Test
-	public void Table_02_Enter_Searchbox() {
+	public void Table_02_Upload_Multiple_Files() {
 		
 	}
 	
-//	@Test
-	public void Table_03_GetDataTable() {
-	
-	}
-	
-	
-	@Test
-	public void Table_04_Input_Data_Table() {
-		
-		
-		
-	}
+
 	
 
 	@AfterClass
