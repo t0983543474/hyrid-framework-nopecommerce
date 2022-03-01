@@ -7,7 +7,7 @@
   <test name="Run on Chrome">
   <parameter name = "browser" value = "Chrome"/>
     <classes> 
-      <class name="com.jquery.Level_10_DataTable_DataGrid"/>
+      <class name="com.jquery.Level_11_Uppload_Files"/>
      
     </classes>
   </test> <!-- Test -->

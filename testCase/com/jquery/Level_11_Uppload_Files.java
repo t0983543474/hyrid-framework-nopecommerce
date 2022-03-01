@@ -26,15 +26,16 @@ public class Level_11_Uppload_Files extends BaseTest{
 
 	
 
-//	@Test
+	@Test
 	public void Table_01_Upload_Single_File() {
 	
 		
 	}
 
-//	@Test
+	@Test
 	public void Table_02_Upload_Multiple_Files() {
-		
+		homePage.uploadFiles(driver, "ITZYYuNa.png", "itzy-yuna.jpg", "itzy-yuna-jyp.jpg");
+		sleepSecond(5);
 	}
 	
 

@@ -192,12 +192,16 @@ public class BasePage {
 	}
 	
 	protected void uploadFilesBySendKey(WebDriver driver, String locatorXpath, String...fileNames) {
-//		String separator = System.gets
-//		String filePath =  System.getProperty("user.dir") + File.separator() ;
+		
+		String filePath = GlobalConstants.FILEPATH_UPLOAD ;
+		String fullNameFiles ="";
 		for (String fileName : fileNames) {
-//			sendk
+			fullNameFiles += filePath + fileName + "\n";
 		}
-//		getWebElement(driver, locatorXpath)
+		fullNameFiles = fullNameFiles.trim();
+		System.out.println(fullNameFiles);
+		WebElement element = getWebElement(driver, locatorXpath);
+		element.sendKeys(fullNameFiles);
 	}
 	
 	protected void selectItemDefaultDropdowList(WebDriver driver, String locator, String item) {
