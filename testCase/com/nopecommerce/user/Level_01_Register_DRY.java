@@ -22,7 +22,7 @@ public class Level_01_Register_DRY {
 	String projectPath = System.getProperty("user.dir");
 	String emailAddress;
 	
-
+ 
   @BeforeClass
   public void beforeClass() {
 	  System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDriver\\chromedriver.exe");
