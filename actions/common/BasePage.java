@@ -172,6 +172,10 @@ public class BasePage {
 		getWebElement(driver, locator).click();
 	}
 	
+	protected void clickToElementByWebElement(WebDriver driver, WebElement element) {
+		element.click();
+	}
+	
 	protected void clickToElement(WebDriver driver, String locatorType , String... dynamicValue) {
 		locatorType = getDynamicXpath(locatorType, dynamicValue);
 		getWebElement(driver, locatorType).click();
@@ -410,6 +414,17 @@ public class BasePage {
 
 	protected boolean isImageLoaded(WebDriver driver, String locator) {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor)driver;
+		boolean status = (boolean) jsExecutor.executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0",  getWebElement(driver, locator));
+		if (status) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	protected boolean isImageLoaded(WebDriver driver, String locator, String...dynamicValue) {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor)driver;
+		locator = getDynamicXpath(locator, dynamicValue);
 		boolean status = (boolean) jsExecutor.executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0",  getWebElement(driver, locator));
 		if (status) {
 			return true;
