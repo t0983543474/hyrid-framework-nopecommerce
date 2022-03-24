@@ -3,6 +3,7 @@ package common;
 import java.io.File;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -321,6 +322,28 @@ public class BasePage {
 		return getWebElement(driver, typeLocator).isDisplayed();
 	}
 	
+	protected boolean isElementUnDisplay(WebDriver driver, String locator) {
+		
+			boolean undisplay = true;
+			overiteImplicitTimeout(driver, shorttime);
+		
+			List<WebElement> elements = getWebElements(driver, locator);
+		
+			overiteImplicitTimeout(driver, longtime);
+			if(elements.size()==0) {
+				
+				undisplay=  true;
+			}else if(elements.size()>0 && !elements.get(0).isDisplayed()) {
+				
+				undisplay=  true;
+			}else {
+			
+				undisplay = false;
+			}
+		
+			return undisplay;
+	}
+	
 	
 	protected boolean isElementEnabled(WebDriver driver, String locator) {
 		return getWebElement(driver, locator).isEnabled();
@@ -567,6 +590,10 @@ public class BasePage {
 		return PageGeneratorManager.getUserHomPageObject(driver);
 	}
 	
+	private void overiteImplicitTimeout(WebDriver driver, long timeout) {
+		driver.manage().timeouts().implicitlyWait(timeout, TimeUnit.SECONDS);
+	}
 	
+	private long shorttime = 5;
 	private long longtime = 30;
 }

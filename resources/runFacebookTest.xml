@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="NopEcommerce" >
+
+<parameter name = "url" value = "https://www.facebook.com/"/>
+
+<listeners>
+	<listener class-name="common.MethodListener"></listener>
+</listeners>
+ 
+  <test name="Run on Chrome">
+  <parameter name = "browser" value = "Chrome"/>
+    <classes> 
+      <class name="com.facebook.Level13_Element_Undisplay"/>
+     
+    </classes>
+  </test> <!-- Test -->
+  
+  
+
+  
+</suite> <!-- Suite -->
