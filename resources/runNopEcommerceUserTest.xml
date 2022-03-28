@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="NopEcommerce" >
+<suite name="NopEcommerce - User" >
 
 <listeners>
 	<listener class-name="common.MethodListener"></listener>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
 </listeners>
 
   <test name="Run on Chrome">
   <parameter name = "browser" value = "Chrome"/>
     <classes> 
-      <class name="com.nopecommerce.user.Level_12_Assert_Verify"/>
+      <class name="com.nopecommerce.user.Level_14_Log4j_Report"/>
      
     </classes>
   </test> <!-- Test -->

@@ -1,0 +1,38 @@
+[INFO ] [2022-03-28 22:11:30,968] Browser:Chrome
+[INFO ] [2022-03-28 22:11:35,513] Register - Click to link to redirect to register page
+[INFO ] [2022-03-28 22:11:36,072] Register - Register to Portal User
+[INFO ] [2022-03-28 22:11:37,296] Verify get Message Register Success
+[INFO ] [2022-03-28 22:11:37,344] -------------PASS----------------
+[INFO ] [2022-03-28 22:11:37,344] Register - Click logout
+[INFO ] [2022-03-28 22:11:38,079] Click login link
+[INFO ] [2022-03-28 22:11:38,735] Login - user login to portal user
+[INFO ] [2022-03-28 22:11:39,622] Login - Verify My Account display
+[INFO ] [2022-03-28 22:11:39,665] --------------FAIL----------------
+[INFO ] [2022-03-28 22:11:39,680] Login - open Customer Infor Page 
+[INFO ] [2022-03-28 22:11:40,213] Login - Logout Portal User page
+[INFO ] [2022-03-28 22:11:41,015] Login  Open link Admin page
+[INFO ] [2022-03-28 22:11:42,634] Login- Login Admin page with email admin@yourstore.com password admin
+[INFO ] [2022-03-28 22:11:45,801] -------------PASS----------------
+[INFO ] [2022-03-28 22:11:45,801] Login - Logout Portal Admin page
+[INFO ] [2022-03-28 22:11:47,115] Login  Open link Portal page
+[INFO ] [2022-03-28 22:11:48,853] Verify My account is display
+[INFO ] [2022-03-28 22:11:48,892] -------------PASS----------------
+[INFO ] [2022-03-28 22:11:49,000] Browser:FireFox
+[INFO ] [2022-03-28 22:11:54,587] Register - Click to link to redirect to register page
+[INFO ] [2022-03-28 22:11:55,190] Register - Register to Portal User
+[INFO ] [2022-03-28 22:11:56,218] Verify get Message Register Success
+[INFO ] [2022-03-28 22:11:56,248] -------------PASS----------------
+[INFO ] [2022-03-28 22:11:56,248] Register - Click logout
+[INFO ] [2022-03-28 22:11:57,230] Click login link
+[INFO ] [2022-03-28 22:11:57,852] Login - user login to portal user
+[INFO ] [2022-03-28 22:11:58,957] Login - Verify My Account display
+[INFO ] [2022-03-28 22:11:59,004] --------------FAIL----------------
+[INFO ] [2022-03-28 22:11:59,004] Login - open Customer Infor Page 
+[INFO ] [2022-03-28 22:11:59,661] Login - Logout Portal User page
+[INFO ] [2022-03-28 22:12:00,732] Login  Open link Admin page
+[INFO ] [2022-03-28 22:12:02,586] Login- Login Admin page with email admin@yourstore.com password admin
+[INFO ] [2022-03-28 22:12:04,575] -------------PASS----------------
+[INFO ] [2022-03-28 22:12:04,575] Login - Logout Portal Admin page
+[INFO ] [2022-03-28 22:12:04,610] Login  Open link Portal page
+[INFO ] [2022-03-28 22:12:06,359] Verify My account is display
+[INFO ] [2022-03-28 22:12:06,399] -------------PASS----------------

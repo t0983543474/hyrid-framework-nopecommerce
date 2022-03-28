@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="NopEcommerce - All" >
+
+
+	<suite-file path= "runNopEcommerceUserTest.xml"/> 
+  	<suite-file path= "runNopEcommerceAdminTest.xml"/> 
+
+  
+</suite> <!-- Suite -->
