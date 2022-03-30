@@ -1,10 +1,6 @@
-[INFO ] [2022-03-29 13:59:38,641] Browser:Chrome
-[INFO ] [2022-03-29 13:59:42,216] Register - Click to link to redirect to register page
-[INFO ] [2022-03-29 13:59:42,773] Register - Register to Portal User
-[INFO ] [2022-03-29 13:59:44,000] Verify get Message Register Success
-[INFO ] [2022-03-29 13:59:44,050] -------------PASS----------------
-[INFO ] [2022-03-29 13:59:44,050] Register - Click logout
-[INFO ] [2022-03-29 13:59:44,871] Click login link
-[INFO ] [2022-03-29 13:59:45,391] Login - user login to portal user
-[INFO ] [2022-03-29 13:59:46,262] Login - Verify My Account display
-[INFO ] [2022-03-29 13:59:46,552] Login  Open link Portal page
+[INFO ] [2022-03-30 15:31:30,044] Browser:Chrome
+[INFO ] [2022-03-30 15:31:32,279] Register - Click to link to redirect to register page
+[INFO ] [2022-03-30 15:31:32,860] Register - Register to Portal User
+[INFO ] [2022-03-30 15:31:34,031] Verify get Message Register Success
+[INFO ] [2022-03-30 15:31:34,074] -------------PASS----------------
+[INFO ] [2022-03-30 15:31:34,074] Register - Click logout
