@@ -358,3 +358,40 @@
 [INFO ] [2022-03-30 15:31:34,031] Verify get Message Register Success
 [INFO ] [2022-03-30 15:31:34,074] -------------PASS----------------
 [INFO ] [2022-03-30 15:31:34,074] Register - Click logout
+[INFO ] [2022-04-01 11:26:18,672] Browser:Chrome
+[INFO ] [2022-04-01 11:26:24,279] Register - Click to link to redirect to register page
+[INFO ] [2022-04-01 11:26:24,877] Register - Register to Portal User
+[INFO ] [2022-04-01 11:26:26,111] Verify get Message Register Success
+[INFO ] [2022-04-01 11:26:26,161] -------------PASS----------------
+[INFO ] [2022-04-01 11:26:26,161] Register - Click logout
+[INFO ] [2022-04-01 11:26:26,957] Click login link
+[INFO ] [2022-04-01 11:26:27,548] Login - user login to portal user
+[INFO ] [2022-04-01 11:26:28,411] Login - Verify My Account display
+[INFO ] [2022-04-01 11:26:28,694] Login  Open link Portal page
+[INFO ] [2022-04-01 14:40:49,883] Browser:Chrome
+[INFO ] [2022-04-01 14:40:52,311] Register - Click to link to redirect to register page
+[INFO ] [2022-04-01 14:40:52,872] Register - Register to Portal User
+[INFO ] [2022-04-01 14:40:54,121] Verify get Message Register Success
+[INFO ] [2022-04-01 14:40:54,168] -------------PASS----------------
+[INFO ] [2022-04-01 14:40:54,168] Register - Click logout
+[INFO ] [2022-04-01 14:40:54,934] Click login link
+[INFO ] [2022-04-01 14:40:55,657] Login - user login to portal user
+[INFO ] [2022-04-01 14:40:56,581] Login - Verify My Account display
+[INFO ] [2022-04-01 14:40:56,873] Login  Open link Portal page
+[INFO ] [2022-04-01 14:43:54,970] Browser:Chrome
+[INFO ] [2022-04-01 14:43:58,074] beforeClass - Click to link to redirect to register page
+[INFO ] [2022-04-01 14:43:58,699] beforeClass - Register to Portal User
+[INFO ] [2022-04-01 14:44:00,174] beforeClass : Verify get Message Register Success
+[INFO ] [2022-04-01 14:44:00,219] -------------PASS----------------
+[INFO ] [2022-04-01 14:44:00,219] beforeClass - Click logout
+[INFO ] [2022-04-01 14:44:00,985] Role_01_User_To_Admin: Click login link
+[INFO ] [2022-04-01 14:44:01,489] Role_01_User_To_Admin - user login to portal user
+[INFO ] [2022-04-01 14:44:02,383] Role_01_User_To_Admin - Verify My Account display
+[INFO ] [2022-04-01 14:44:02,423] Role_01_User_To_Admin - open Customer Infor Page 
+[INFO ] [2022-04-01 14:44:03,000] Role_01_User_To_Admin - Logout Portal User page
+[INFO ] [2022-04-01 14:44:03,731] Role_01_User_To_Admin  Open link Admin page
+[INFO ] [2022-04-01 14:44:05,520] Role_01_User_To_Admin- Login Admin page with email admin@yourstore.com password admin
+[INFO ] [2022-04-01 14:44:08,740] Role_02_Admin_To_User - Logout Portal Admin page
+[INFO ] [2022-04-01 14:44:10,013] Role_02_Admin_To_User: Login  Open link Portal page
+[INFO ] [2022-04-01 14:44:11,759] Role_02_Admin_To_User: Verify My account is display
+[INFO ] [2022-04-01 15:17:17,192] Browser:Chrome

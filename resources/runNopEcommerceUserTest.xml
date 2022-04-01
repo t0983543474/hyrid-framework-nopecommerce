@@ -3,7 +3,7 @@
 
 <listeners>
 	<listener class-name="common.MethodListener"></listener>
-		<listener class-name="reportConfig.ExtentReportListenerV2"></listener>
+		<listener class-name="reportConfigExtentV3.ExtentTestListenerV3"></listener>
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
 </listeners>
@@ -11,7 +11,7 @@
   <test name="Run on Chrome">
   <parameter name = "browser" value = "Chrome"/>
     <classes> 
-      <class name="com.nopecommerce.user.Level_15_ExtentReport_V2"/>
+      <class name="com.nopecommerce.user.Level_15_ExtentReport_V3"/>
      
     </classes>
   </test> <!-- Test -->

@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.relevantcodes.extentreports.LogStatus;
+//import com.relevantcodes.extentreports.LogStatus;
 
 import common.BaseTest;
 import common.GlobalConstants;
@@ -20,7 +20,7 @@ import pageObjects.nopecommerce.user.UserCustomerInfoObject;
 import pageObjects.nopecommerce.user.UserHomePageObject;
 import pageObjects.nopecommerce.user.UserLoginPageObject;
 import pageObjects.nopecommerce.user.UserRegisterPageObject;
-import reportConfig.ExtentTestManager;
+//import reportConfig.ExtentTestManager;
 
 
 
@@ -63,53 +63,53 @@ public class Level_15_ExtentReport_V2 extends BaseTest{
 	
 	@Test
 	public void Role_01_User_To_Admin(Method method) {
-		ExtentTestManager.startTest(method.getName(), "Role_01_User_To_Admin");
-		ExtentTestManager.getTest().log(LogStatus.INFO, "Click login link");
-		
-		userLoginPage = userHomePage.clickLoginLink();
-		
-		ExtentTestManager.getTest().log(LogStatus.INFO,"Login - user login to portal user");
-		userHomePage =  userLoginPage.LoginPortalUser(userEmailAddress, userPassword);
-
-		ExtentTestManager.getTest().log(LogStatus.INFO,"Login - Verify My Account display");
-		Assert.assertTrue(userHomePage.MyAccountIsDisplay());
-		
-		ExtentTestManager.getTest().log(LogStatus.INFO,"Login - open Customer Infor Page ");
-		userCustomerInfoPage =  userHomePage.openCustomerInfoPage();
-		
-		ExtentTestManager.getTest().log(LogStatus.INFO,"Login - Logout Portal User page");
-		userHomePage = userCustomerInfoPage.clickLogoutLinkAtUserPage(driver);
-		
-		ExtentTestManager.getTest().log(LogStatus.INFO,"Login  Open link Admin page");
-	  	userHomePage.openPageURL(driver, GlobalConstants.ADMIN_PAGE_URL);
-	  	
-	    adminLoginPage = PageGeneratorManager.getAdminLoginPageObject(driver);
-	    
-	    ExtentTestManager.getTest().log(LogStatus.INFO,"Login- Login Admin page with email " + adminEmail + " password " + adminPassword);
-	    adminDashboardPage = adminLoginPage.LoginToAdmiPage(adminEmail, adminPassword);
-	    
-	    
-	    Assert.assertTrue(adminDashboardPage.getTextHeadingDashBoard().contains("Dashboard"));
-		
-	    ExtentTestManager.getTest().log(LogStatus.INFO,"Login - Logout Portal Admin page");
-		adminLoginPage = adminDashboardPage.clickLogoutLinkAtAdminPage(driver);
-		
-		ExtentTestManager.endTest();
+//		ExtentTestManager.startTest(method.getName(), "Role_01_User_To_Admin");
+//		ExtentTestManager.getTest().log(LogStatus.INFO, "Click login link");
+//		
+//		userLoginPage = userHomePage.clickLoginLink();
+//		
+//		ExtentTestManager.getTest().log(LogStatus.INFO,"Login - user login to portal user");
+//		userHomePage =  userLoginPage.LoginPortalUser(userEmailAddress, userPassword);
+//
+//		ExtentTestManager.getTest().log(LogStatus.INFO,"Login - Verify My Account display");
+//		Assert.assertTrue(userHomePage.MyAccountIsDisplay());
+//		
+//		ExtentTestManager.getTest().log(LogStatus.INFO,"Login - open Customer Infor Page ");
+//		userCustomerInfoPage =  userHomePage.openCustomerInfoPage();
+//		
+//		ExtentTestManager.getTest().log(LogStatus.INFO,"Login - Logout Portal User page");
+//		userHomePage = userCustomerInfoPage.clickLogoutLinkAtUserPage(driver);
+//		
+//		ExtentTestManager.getTest().log(LogStatus.INFO,"Login  Open link Admin page");
+//	  	userHomePage.openPageURL(driver, GlobalConstants.ADMIN_PAGE_URL);
+//	  	
+//	    adminLoginPage = PageGeneratorManager.getAdminLoginPageObject(driver);
+//	    
+//	    ExtentTestManager.getTest().log(LogStatus.INFO,"Login- Login Admin page with email " + adminEmail + " password " + adminPassword);
+//	    adminDashboardPage = adminLoginPage.LoginToAdmiPage(adminEmail, adminPassword);
+//	    
+//	    
+//	    Assert.assertTrue(adminDashboardPage.getTextHeadingDashBoard().contains("Dashboard"));
+//		
+//	    ExtentTestManager.getTest().log(LogStatus.INFO,"Login - Logout Portal Admin page");
+//		adminLoginPage = adminDashboardPage.clickLogoutLinkAtAdminPage(driver);
+//		
+//		ExtentTestManager.endTest();
 	}
 	
 	@Test
 	public void Role_02_Admin_To_User(Method method) {
-		ExtentTestManager.startTest(method.getName(), "Role_01_User_To_Admin");
-		  ExtentTestManager.getTest().log(LogStatus.INFO,"Login  Open link Portal page");
-	  adminLoginPage.openPageURL(driver, GlobalConstants.PORTAL_PAGE_URL);
-	  userHomePage = PageGeneratorManager.getUserHomPageObject(driver);
-	  
-	  userLoginPage = userHomePage.clickLoginLink();
-	  
-		userHomePage =  userLoginPage.LoginPortalUser(userEmailAddress, userPassword);
-		  ExtentTestManager.getTest().log(LogStatus.INFO,"Verify My account is display");
-		  Assert.assertFalse(userHomePage.MyAccountIsDisplay());
-		  ExtentTestManager.endTest();
+//		ExtentTestManager.startTest(method.getName(), "Role_01_User_To_Admin");
+//		  ExtentTestManager.getTest().log(LogStatus.INFO,"Login  Open link Portal page");
+//	  adminLoginPage.openPageURL(driver, GlobalConstants.PORTAL_PAGE_URL);
+//	  userHomePage = PageGeneratorManager.getUserHomPageObject(driver);
+//	  
+//	  userLoginPage = userHomePage.clickLoginLink();
+//	  
+//		userHomePage =  userLoginPage.LoginPortalUser(userEmailAddress, userPassword);
+//		  ExtentTestManager.getTest().log(LogStatus.INFO,"Verify My account is display");
+//		  Assert.assertFalse(userHomePage.MyAccountIsDisplay());
+//		  ExtentTestManager.endTest();
 	}
 
 	@AfterClass
