@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import common.BasePage;
 import common.PageGeneratorManager;
+import io.qameta.allure.Step;
 import pageUIs.nopecommerce.user.UserLoginPageUI;
 
 public class UserLoginPageObject extends BasePage {
@@ -30,12 +31,14 @@ public class UserLoginPageObject extends BasePage {
 		return getElementText(driver, UserLoginPageUI.MESSAGE_ERROR_SUMARY_TEXT);
 	}
 	
+	@Step("CLick login button")
 	public UserHomePageObject clickLoginButton() {
 		waitForElementClickAble(driver, UserLoginPageUI.LOGIN_BTN);
 		clickToElement(driver, UserLoginPageUI.LOGIN_BTN);
 		return PageGeneratorManager.getUserHomPageObject(driver);
 	}
 	
+	@Step("Login in portal user")
 	public UserHomePageObject LoginPortalUser(String email , String password) {
 		inputToEmail(email);
 		inputToPassword(password);

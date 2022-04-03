@@ -3,15 +3,15 @@
 
 <listeners>
 	<listener class-name="common.MethodListener"></listener>
-		<listener class-name="reportExtentV5Config.ExtentTestListenerV5"></listener>
-        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
-        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+		<listener class-name="reportConfig.AllureTestListener"></listener>
+    <!--     <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>-->
 </listeners>
 
   <test name="Run on Chrome">
   <parameter name = "browser" value = "Chrome"/>
     <classes> 
-      <class name="com.nopecommerce.user.Level_15_ExtentReport_V5"/>
+      <class name="com.nopecommerce.user.Level_15_Allure_Report"/>
      
     </classes>
   </test> <!-- Test -->

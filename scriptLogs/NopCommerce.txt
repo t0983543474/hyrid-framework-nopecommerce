@@ -1,6 +1,1 @@
-[INFO ] [2022-04-03 12:03:32,410] Browser:Chrome
-[INFO ] [2022-04-03 12:03:35,663] beforeClass - Click to link to redirect to register page
-[INFO ] [2022-04-03 12:03:36,214] beforeClass - Register to Portal User
-[INFO ] [2022-04-03 12:03:37,420] beforeClass : Verify get Message Register Success
-[INFO ] [2022-04-03 12:03:37,465] -------------PASS----------------
-[INFO ] [2022-04-03 12:03:37,465] beforeClass - Click logout
+[INFO ] [2022-04-03 20:08:28,818] -------------PASS----------------

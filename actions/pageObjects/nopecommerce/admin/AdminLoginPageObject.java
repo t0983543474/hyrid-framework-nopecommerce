@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import common.BasePage;
 import common.PageGeneratorManager;
+import io.qameta.allure.Step;
 import pageUIs.nopecommerce.admin.AdminLoginPageUI;
 
 public class AdminLoginPageObject  extends BasePage{
@@ -31,6 +32,7 @@ public class AdminLoginPageObject  extends BasePage{
 		return PageGeneratorManager.getAdminDashboardPageObject(driver);
 	}
 	
+	@Step("Login to admin page")
 	public AdminDashboardPageObject  LoginToAdmiPage(String email, String pass) {
 		inputToEmail(email);
 		inputToPassword(pass);

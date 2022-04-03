@@ -20,6 +20,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.qameta.allure.Step;
 import okio.Timeout;
 import pageObjects.nopecommerce.admin.AdminLoginPageObject;
 import pageObjects.nopecommerce.user.UserAddressesPageObject;
@@ -588,6 +589,7 @@ public class BasePage {
 		return PageGeneratorManager.getAdminLoginPageObject(driver);
 	}
 	
+	@Step("Logout Admin page")
 	public UserHomePageObject clickLogoutLinkAtUserPage(WebDriver driver) {
 		waitForElementClickAble(driver, BasePageUI.LOGOUT_LINK_AT_USER);
 		clickToElement(driver, BasePageUI.LOGOUT_LINK_AT_USER);

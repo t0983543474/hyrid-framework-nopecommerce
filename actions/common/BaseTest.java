@@ -1,5 +1,6 @@
 package common;
 
+import java.io.File;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -13,6 +14,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.BeforeSuite;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -23,6 +25,11 @@ public class BaseTest {
 	String projectPath = System.getProperty("user.dir");
 	
 	protected final Log log;
+	
+	@BeforeSuite
+	public void innitBeforeSuite() {
+		deleteAllFileInFolder();
+	}
 	
 	public BaseTest() {
 		log = LogFactory.getLog(getClass());
@@ -161,6 +168,23 @@ public class BaseTest {
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+	}
+	
+	
+	public void deleteAllFileInFolder() {
+		try {
+			String pathFolderDownload = GlobalConstants.PROJECT_PATH + "/allure-json";
+			File file = new File(pathFolderDownload);
+			File[] listFiles = file.listFiles();
+			for(int i = 0; i <  listFiles.length ; i++) {
+				if(listFiles[i].isFile()) {
+					new File(listFiles[i].toString()).delete();
+				}
+			}
+		}catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
 		}
 	}
 

@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import common.BasePage;
 import common.PageGeneratorManager;
+import io.qameta.allure.Step;
 import pageUIs.nopecommerce.user.UserHomePageUI;
 import pageUIs.nopecommerce.user.UserRegisterPageUI;
 
@@ -64,17 +65,20 @@ public class UserRegisterPageObject extends BasePage {
 		return getElementText(driver, UserRegisterPageUI.REGISTER_SUCCESS_TEXT);
 	}
 	
+	@Step("Get message register email exists")
 	public String getMessageRegisterEmailExists() {
 		waitForElementVisible(driver, UserRegisterPageUI.REGISTER_EMAIL_EXISTS_TEXT);
 		return getElementText(driver, UserRegisterPageUI.REGISTER_EMAIL_EXISTS_TEXT);
 	}
 	
+	@Step("Click logout link")
 	public UserHomePageObject clickLogOutLink() {
 		waitForElementClickAble(driver, UserRegisterPageUI.LOGOUT_LINK);
 		clickToElement(driver, UserRegisterPageUI.LOGOUT_LINK);
 		return PageGeneratorManager.getUserHomPageObject(driver);
 	}
 	
+	@Step("Register portal user with firstname is {0} lastname = {1} email = {2} password = {3} confirm pastword = {4}")
 	public void RegisterToPortalUser(String firstName , String lastName, String emailAddress, String password, String confirmPassword) {
 		inputToFirstNameTextBox(firstName);
 		inputToLastNameTextBox(lastName);
