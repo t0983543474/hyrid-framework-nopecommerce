@@ -9,6 +9,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -19,6 +20,8 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.nopecommerce.common.Common_01_Register_Cookies;
 
 import io.qameta.allure.Step;
 import okio.Timeout;
@@ -66,6 +69,19 @@ public class BasePage {
 	
 	public void freshCurrentPage(WebDriver driver) {
 		driver.navigate().refresh();
+	}
+	
+	public Set<Cookie> getAllCookies(WebDriver driver){
+		return driver.manage().getCookies();
+	}
+	
+	public void setCookies(WebDriver driver, Set<Cookie> cookies) {
+		
+		for(Cookie cookie : cookies) {
+			driver.manage().addCookie(cookie);
+		}
+		
+		sleepSecond(3);
 	}
 	
 	protected Alert waitForAlertToPresent(WebDriver driver) {
@@ -576,6 +592,11 @@ public class BasePage {
 		waitForElementClickAble(driver, BasePageUI.REWARD_POINTS_LINK);
 		clickToElement(driver, BasePageUI.REWARD_POINTS_LINK);
 		return PageGeneratorManager.getUserRewardPonitObject(driver);
+	}
+	
+	public void clickLogo(WebDriver driver) {
+		waitForElementClickAble(driver, BasePageUI.LOGO_IMAGE_LINK);
+		clickToElement(driver, BasePageUI.LOGO_IMAGE_LINK);
 	}
 	
 	public void openPageURL(WebDriver driver,  String url) {

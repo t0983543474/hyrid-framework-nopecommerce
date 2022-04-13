@@ -15,4 +15,6 @@ public class BasePageUI {
 	public static final String LOGOUT_LINK_AT_ADMIN = "xpath=//a[text()='Logout']";
 	public static final String LOGOUT_LINK_AT_USER = "xpath=//a[text()='Log out']";
 	
+	public static final String LOGO_IMAGE_LINK = "xpath=//div[@class='header-logo']//img";
+	
 }
