@@ -52,12 +52,14 @@ public class Common_01_Register extends BaseTest{
 
 		log.info("beforeClass - Click logout");
 		userHomePage = userRegisterPage.clickLogOutLink();
+		driver.quit();
 		
 	}
 	
 	@AfterTest
 	public void afterTest() {
-		driver.quit();
+		System.out.println("After tesst Trang");
+		closeBrowserAndDriver();
 	}
 	
 }

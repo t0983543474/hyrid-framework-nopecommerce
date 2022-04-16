@@ -12,8 +12,8 @@
   <test name="Run on Chrome">         
   <parameter name = "browser" value = "Chrome"/>
     <classes> 
-     	<class name="com.nopecommerce.common.Common_01_Register_Cookies"/>
-     	<class name="com.nopecommerce.user.Level_16_Login_Cookies"/>
+     	<class name="com.nopecommerce.common.Common_01_Register"/>
+     	<class name="com.nopecommerce.user.Level_17_Custom_Close_Browser_Driver"/>
      
     </classes>
   </test> <!-- Test -->

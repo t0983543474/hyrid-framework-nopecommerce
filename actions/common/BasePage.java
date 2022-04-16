@@ -610,10 +610,11 @@ public class BasePage {
 		return PageGeneratorManager.getAdminLoginPageObject(driver);
 	}
 	
-	@Step("Logout Admin page")
+	@Step("Logout User page")
 	public UserHomePageObject clickLogoutLinkAtUserPage(WebDriver driver) {
 		waitForElementClickAble(driver, BasePageUI.LOGOUT_LINK_AT_USER);
 		clickToElement(driver, BasePageUI.LOGOUT_LINK_AT_USER);
+		System.out.println("Logout poral page ");
 		return PageGeneratorManager.getUserHomPageObject(driver);
 	}
 	

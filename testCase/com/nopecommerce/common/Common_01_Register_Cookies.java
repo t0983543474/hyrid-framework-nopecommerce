@@ -66,11 +66,13 @@ public class Common_01_Register_Cookies extends BaseTest{
 		
 		userHomePage.clickLogoutLinkAtUserPage(driver);
 		
+		driver.quit();
+		
 	}
 	
 	@AfterTest
 	public void afterTest() {
-		driver.quit();
+//		driver.quit();
 	}
 	
 }
