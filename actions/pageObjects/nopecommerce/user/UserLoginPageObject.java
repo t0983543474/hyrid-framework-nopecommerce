@@ -46,6 +46,13 @@ public class UserLoginPageObject extends BasePage {
 		return clickLoginButton();
 	}
 	
+	public UserHomePageObject LoginPotalUserPageByID(String email , String password) {
+		inputToTextById(driver, email, "Email");
+		inputToTextById(driver, password, "Password");
+		
+		return clickLoginButton();
+	}
+	
 	
 
 }

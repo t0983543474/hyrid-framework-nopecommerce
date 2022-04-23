@@ -89,4 +89,15 @@ public class UserRegisterPageObject extends BasePage {
 		 clickToRegisterButton();
 	}
 	
+	
+	public void RegisterToPortalUserByID(String firstName , String lastName, String emailAddress, String password, String confirmPassword) {
+		inputToTextById(driver, firstName, "FirstName");
+		inputToTextById(driver, lastName, "LastName");
+		inputToTextById(driver, emailAddress, "Email");
+		inputToTextById(driver, password, "Password");
+		inputToTextById(driver, confirmPassword, "ConfirmPassword");
+
+		 clickToRegisterButton();
+	}
+	
 }

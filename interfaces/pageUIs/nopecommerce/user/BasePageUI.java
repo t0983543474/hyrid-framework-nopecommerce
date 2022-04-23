@@ -17,4 +17,7 @@ public class BasePageUI {
 	
 	public static final String LOGO_IMAGE_LINK = "xpath=//div[@class='header-logo']//img";
 	
+	public static final String INPUT_TEXTBOX_BY_ID = "xpath=//input[@id='%s']";
+	public static final String LINK_BY_TEXT = "xpath=//a[text()='%s']";
+	
 }

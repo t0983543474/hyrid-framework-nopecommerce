@@ -30,6 +30,7 @@ import pageObjects.nopecommerce.user.UserAddressesPageObject;
 import pageObjects.nopecommerce.user.UserCustomerInfoObject;
 import pageObjects.nopecommerce.user.UserHomePageObject;
 import pageObjects.nopecommerce.user.UserMyProductReviewsObject;
+import pageObjects.nopecommerce.user.UserRegisterPageObject;
 import pageObjects.nopecommerce.user.UserRewardPonitObject;
 import pageUIs.nopecommerce.user.BasePageUI;
 import pageUIs.nopecommerce.user.UserCustomerInfoUI;
@@ -212,6 +213,13 @@ public class BasePage {
 	
 	protected void sendKeyToElement(WebDriver driver, String locatorType, String value, String...dynamicValue) {
 		 locatorType = getDynamicXpath(locatorType, dynamicValue);
+		WebElement element = getWebElement(driver, locatorType);
+		element.clear();
+		element.sendKeys(value);
+	}
+	
+	protected void inputToTextById(WebDriver driver, String value, String...dynamicValue) {
+		String locatorType = getDynamicXpath(BasePageUI.INPUT_TEXTBOX_BY_ID, dynamicValue);
 		WebElement element = getWebElement(driver, locatorType);
 		element.clear();
 		element.sendKeys(value);
@@ -601,6 +609,13 @@ public class BasePage {
 	
 	public void openPageURL(WebDriver driver,  String url) {
 		openPageUrl(driver, url);
+		
+	}
+	
+	public void clickToLinkByText(WebDriver driver, String...dynamicText) {
+		String locationType = getDynamicXpath(BasePageUI.LINK_BY_TEXT, dynamicText);
+		waitForElementClickAble(driver, locationType);
+		clickToElement(driver, locationType);
 		
 	}
 	
