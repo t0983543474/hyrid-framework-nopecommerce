@@ -31,8 +31,13 @@ public class UserLoginPageObject extends BasePage {
 		return getElementText(driver, UserLoginPageUI.MESSAGE_ERROR_SUMARY_TEXT);
 	}
 	
+	public void clickLoginButton() {
+		waitForElementClickAble(driver, UserLoginPageUI.LOGIN_BTN);
+		clickToElement(driver, UserLoginPageUI.LOGIN_BTN);
+	}
+	
 	@Step("CLick login button")
-	public UserHomePageObject clickLoginButton() {
+	public UserHomePageObject clickLogin() {
 		waitForElementClickAble(driver, UserLoginPageUI.LOGIN_BTN);
 		clickToElement(driver, UserLoginPageUI.LOGIN_BTN);
 		return PageGeneratorManager.getUserHomPageObject(driver);
@@ -43,14 +48,14 @@ public class UserLoginPageObject extends BasePage {
 		inputToEmail(email);
 		inputToPassword(password);
 		
-		return clickLoginButton();
+		return clickLogin();
 	}
 	
 	public UserHomePageObject LoginPotalUserPageByID(String email , String password) {
 		inputToTextById(driver, email, "Email");
 		inputToTextById(driver, password, "Password");
 		
-		return clickLoginButton();
+		return clickLogin();
 	}
 	
 	

@@ -65,7 +65,7 @@ public class Level_03_Page_Object_02_Login {
 		System.out.println("Step 1: CLick to Login Page");
 		loginPage = new UserLoginPageObject(driver);
 		System.out.println("Step2 : Click login button");
-		loginPage.clickLoginButton();
+		loginPage.clickLogin();
 		Assert.assertEquals(loginPage.getMessageErrorEmail(), "Please enter your email");
 		
 	}
@@ -77,7 +77,7 @@ public class Level_03_Page_Object_02_Login {
 		loginPage = new UserLoginPageObject(driver);
 		loginPage.inputToEmail(invalidEmail);
 		loginPage.inputToPassword(validPassword);
-		loginPage.clickLoginButton();
+		loginPage.clickLogin();
 		Assert.assertEquals(loginPage.getMessageErrorEmail(), "Wrong email");
 		
 	}
@@ -89,7 +89,7 @@ public class Level_03_Page_Object_02_Login {
 		loginPage = new UserLoginPageObject(driver);
 		loginPage.inputToEmail(emailNotRegister);
 		loginPage.inputToPassword(validPassword);
-		loginPage.clickLoginButton();
+		loginPage.clickLogin();
 		Assert.assertEquals(loginPage.getMessageErrorSumary(), 
 				"Login was unsuccessful. Please correct the errors and try again.\n" + "No customer account found");
 		
@@ -102,7 +102,7 @@ public class Level_03_Page_Object_02_Login {
 		loginPage = new UserLoginPageObject(driver);
 		loginPage.inputToEmail(emailValid);
 		loginPage.inputToPassword("");
-		loginPage.clickLoginButton();
+		loginPage.clickLogin();
 		Assert.assertEquals(loginPage.getMessageErrorSumary(),
 	"Login was unsuccessful. Please correct the errors and try again.\nThe credentials provided are incorrect");
 		
@@ -115,7 +115,7 @@ public class Level_03_Page_Object_02_Login {
 		loginPage = new UserLoginPageObject(driver);
 		loginPage.inputToEmail(emailValid);
 		loginPage.inputToPassword(wrongPassword);
-		loginPage.clickLoginButton();
+		loginPage.clickLogin();
 		Assert.assertEquals(loginPage.getMessageErrorSumary(),
 	"Login was unsuccessful. Please correct the errors and try again.\n" + 
 	"The credentials provided are incorrect");
@@ -129,7 +129,7 @@ public class Level_03_Page_Object_02_Login {
 		loginPage = new UserLoginPageObject(driver);
 		loginPage.inputToEmail(emailValid);
 		loginPage.inputToPassword(validPassword);
-		loginPage.clickLoginButton();
+		loginPage.clickLogin();
 
 		homePage = new UserHomePageObject(driver);
 		Assert.assertTrue(homePage.MyAccountIsDisplay());

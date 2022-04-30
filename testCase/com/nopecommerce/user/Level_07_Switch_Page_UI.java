@@ -80,7 +80,7 @@ public class Level_07_Switch_Page_UI extends BaseTest{
 		
 		loginPage.inputToEmail(emailAddress);
 		loginPage.inputToPassword(password);
-		homePage = loginPage.clickLoginButton();
+		homePage = loginPage.clickLogin();
 
 		Assert.assertTrue(homePage.MyAccountIsDisplay());
 

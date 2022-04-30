@@ -1,2 +1,2 @@
-[INFO ] [2022-04-30 12:35:27,069] OS name = windows 10
-[INFO ] [2022-04-30 12:35:27,069] Driver instance name = chromedriver: chrome on windows (6bb9ef93e326ef2e8b7dffccf2c473b4)
+[INFO ] [2022-04-30 15:59:29,352] OS name = windows 10
+[INFO ] [2022-04-30 15:59:29,353] Driver instance name = chromedriver: chrome on windows (1be7484510f21cbe2409b86af2a621a9)

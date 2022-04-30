@@ -73,7 +73,7 @@ public class Level_09_Dynamic_Locator extends BaseTest{
 		
 		loginPage.inputToEmail(emailAddress);
 		loginPage.inputToPassword(password);
-		homePage = loginPage.clickLoginButton();
+		homePage = loginPage.clickLogin();
 
 		Assert.assertTrue(homePage.MyAccountIsDisplay());
 
