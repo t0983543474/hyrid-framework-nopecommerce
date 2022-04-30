@@ -511,3 +511,58 @@
 [INFO ] [2022-04-23 14:57:48,736] beforeClass - Click logout
 [INFO ] [2022-04-23 14:58:00,606] OS name = windows 10
 [INFO ] [2022-04-23 14:58:00,606] Driver instance name = chromedriver: chrome on windows (7070755b238ae91d6b9e2a6ed7e30055)
+[INFO ] [2022-04-30 09:56:07,587] Browser:Chrome
+[INFO ] [2022-04-30 09:56:51,185] Browser:Chrome
+[INFO ] [2022-04-30 09:57:35,491] Browser:Chrome
+[INFO ] [2022-04-30 09:57:39,507] OS name = windows 10
+[INFO ] [2022-04-30 09:57:39,507] Driver instance name = chromedriver: chrome on windows (e2cdfb5e4a45d7e9c0f06b5c06be2280)
+[INFO ] [2022-04-30 10:00:18,324] Browser:Chrome
+[INFO ] [2022-04-30 10:00:21,734] Register - Click to link to redirect to register page
+[INFO ] [2022-04-30 10:00:22,386] Register - Register to Portal User
+[INFO ] [2022-04-30 10:00:25,017] Verify get Message Register Success
+[INFO ] [2022-04-30 10:00:25,067] -------------PASS----------------
+[INFO ] [2022-04-30 10:00:25,067] Register - Click logout
+[INFO ] [2022-04-30 10:00:25,989] Click login link
+[INFO ] [2022-04-30 10:00:28,216] Login - user login to portal user
+[INFO ] [2022-04-30 10:00:29,127] Login - Verify My Account display
+[INFO ] [2022-04-30 10:02:19,875] Browser:Chrome
+[INFO ] [2022-04-30 10:02:22,148] beforeClass - Click to link to redirect to register page
+[INFO ] [2022-04-30 10:02:22,698] beforeClass - Register to Portal User
+[INFO ] [2022-04-30 10:02:23,901] beforeClass : Verify get Message Register Success
+[INFO ] [2022-04-30 10:02:23,948] -------------PASS----------------
+[INFO ] [2022-04-30 10:02:23,948] beforeClass - Click logout
+[INFO ] [2022-04-30 10:09:19,132] Browser:Chrome
+[INFO ] [2022-04-30 10:09:22,211] Register_01: Go to register page
+[INFO ] [2022-04-30 10:09:22,960] Register_01: Verify error message First name
+[INFO ] [2022-04-30 10:09:22,982] Register_01: Veerify error message Last name
+[INFO ] [2022-04-30 10:09:23,003] Register_01: Veerify error message Email
+[INFO ] [2022-04-30 10:09:23,022] Register_01: Veerify error message Password
+[INFO ] [2022-04-30 10:09:23,041] Register_01: Veerify error message Confirm Password
+[INFO ] [2022-04-30 10:09:23,112] OS name = windows 10
+[INFO ] [2022-04-30 10:09:23,112] Driver instance name = chromedriver: chrome on windows (c835ac4b5b661086a94b874ecf70b15c)
+[INFO ] [2022-04-30 10:11:55,272] Browser:Chrome
+[INFO ] [2022-04-30 10:11:59,190] OS name = windows 10
+[INFO ] [2022-04-30 10:11:59,190] Driver instance name = chromedriver: chrome on windows (8e2d288facafa581bd17eb14cefba232)
+[INFO ] [2022-04-30 10:12:41,503] Browser:Chrome
+[INFO ] [2022-04-30 10:12:44,626] beforeClass - Click to link to redirect to register page
+[INFO ] [2022-04-30 10:12:46,779] beforeClass - Register to Portal User
+[INFO ] [2022-04-30 10:12:48,035] beforeClass : Verify get Message Register Success
+[INFO ] [2022-04-30 10:12:48,081] -------------PASS----------------
+[INFO ] [2022-04-30 10:12:48,081] beforeClass - Click logout
+[INFO ] [2022-04-30 10:15:33,825] Browser:Chrome
+[INFO ] [2022-04-30 10:15:37,910] OS name = windows 10
+[INFO ] [2022-04-30 10:15:37,911] Driver instance name = chromedriver: chrome on windows (404fcdcddd1bed33db9f28feb67a842d)
+[INFO ] [2022-04-30 10:55:20,558] OS name = windows 10
+[INFO ] [2022-04-30 10:55:20,558] Driver instance name = chromedriver: chrome on windows (9fa60d0327f9bceede588e5e24896572)
+[INFO ] [2022-04-30 12:09:01,021] OS name = windows 10
+[INFO ] [2022-04-30 12:09:01,021] Driver instance name = chromedriver: chrome on windows (455934a3528e99d1fb2affc19322de6b)
+[INFO ] [2022-04-30 12:23:48,853] OS name = windows 10
+[INFO ] [2022-04-30 12:23:48,853] Driver instance name = chromedriver: chrome on windows (484f0aee75b214bda21a91421a2fedf3)
+[INFO ] [2022-04-30 12:27:08,187] OS name = windows 10
+[INFO ] [2022-04-30 12:27:08,188] Driver instance name = chromedriver: chrome on windows (f80201e95490a0b4f921b5773fdf84e9)
+[INFO ] [2022-04-30 12:32:46,237] OS name = windows 10
+[INFO ] [2022-04-30 12:32:46,238] Driver instance name = chromedriver: chrome on windows (3ac17853f53ea33ee4ac992e94904b2b)
+[INFO ] [2022-04-30 12:35:03,164] OS name = windows 10
+[INFO ] [2022-04-30 12:35:03,165] Driver instance name = chromedriver: chrome on windows (d0f7374c6d4c8d0f042cddf7f11b751d)
+[INFO ] [2022-04-30 12:35:27,069] OS name = windows 10
+[INFO ] [2022-04-30 12:35:27,069] Driver instance name = chromedriver: chrome on windows (6bb9ef93e326ef2e8b7dffccf2c473b4)
