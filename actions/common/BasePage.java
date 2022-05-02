@@ -27,6 +27,7 @@ import io.qameta.allure.Step;
 import okio.Timeout;
 import pageObjects.nopecommerce.admin.AdminLoginPageObject;
 import pageObjects.nopecommerce.user.UserAddressesPageObject;
+import pageObjects.nopecommerce.user.UserChangePasswordPageObject;
 import pageObjects.nopecommerce.user.UserCustomerInfoObject;
 import pageObjects.nopecommerce.user.UserHomePageObject;
 import pageObjects.nopecommerce.user.UserMyProductReviewsObject;
@@ -34,6 +35,7 @@ import pageObjects.nopecommerce.user.UserRegisterPageObject;
 import pageObjects.nopecommerce.user.UserRewardPonitObject;
 import pageUIs.nopecommerce.user.BasePageUI;
 import pageUIs.nopecommerce.user.UserCustomerInfoUI;
+import pageUIs.nopecommerce.user.UserHomePageUI;
 
 public class BasePage {
 	
@@ -225,6 +227,12 @@ public class BasePage {
 		element.sendKeys(value);
 	}
 	
+	public String getValueTextboxById(WebDriver driver, String...dynamicValue) {
+		String locatorType = getDynamicXpath(BasePageUI.INPUT_TEXTBOX_BY_ID, dynamicValue);
+		WebElement element = getWebElement(driver, locatorType);
+		return element.getAttribute("value");
+	}
+	
 	protected void uploadFilesBySendKey(WebDriver driver, String locatorXpath, String...fileNames) {
 		
 		String filePath = GlobalConstants.FILEPATH_UPLOAD ;
@@ -252,6 +260,12 @@ public class BasePage {
 	
 	protected String getSelectedItemDefaultDropdowList (WebDriver driver, String locator) {
 		Select select = new Select(getWebElement(driver, locator));
+		return select.getFirstSelectedOption().getText();
+	}
+	
+	public String getSelectedItemDefaultDropdowListByName (WebDriver driver, String...dynamicValue) {
+		 String locatorType = getDynamicXpath(BasePageUI.SELECT_DROPDOWNL_BY_NAME, dynamicValue);
+		Select select = new Select(getWebElement(driver, locatorType));
 		return select.getFirstSelectedOption().getText();
 	}
 	
@@ -571,8 +585,9 @@ public class BasePage {
 		case "Reward points":
 			return PageGeneratorManager.getUserRewardPonitObject(driver);
 		case "My product reviews":
-			
 			return PageGeneratorManager.getUserMyProductReviewsObject(driver);
+		case "Change password":
+			return PageGeneratorManager.getUserChangePasswordPageObject(driver);
 		default:
 			throw new RuntimeException("Invalid page name");
 		}
@@ -602,6 +617,13 @@ public class BasePage {
 		return PageGeneratorManager.getUserRewardPonitObject(driver);
 	}
 	
+	public UserChangePasswordPageObject openUserChangePasswordPage(WebDriver driver) {
+		waitForElementClickAble(driver, BasePageUI.REWARD_POINTS_LINK);
+		clickToElement(driver, BasePageUI.REWARD_POINTS_LINK);
+		return PageGeneratorManager.getUserChangePasswordPageObject(driver);
+	}
+	
+	
 	public void clickLogo(WebDriver driver) {
 		waitForElementClickAble(driver, BasePageUI.LOGO_IMAGE_LINK);
 		clickToElement(driver, BasePageUI.LOGO_IMAGE_LINK);
@@ -625,8 +647,16 @@ public class BasePage {
 		return PageGeneratorManager.getAdminLoginPageObject(driver);
 	}
 	
+	
+	public UserCustomerInfoObject clickMyAccountLink(WebDriver driver) {
+		waitForElementClickAble(driver, UserHomePageUI.MYACCOUNT_LINK);
+		clickToElement(driver, UserHomePageUI.MYACCOUNT_LINK);
+		return PageGeneratorManager.getUserCustomerPageObject(driver);
+	}
+	
 	@Step("Logout User page")
 	public UserHomePageObject clickLogoutLinkAtUserPage(WebDriver driver) {
+		waitForElementVisible(driver, BasePageUI.LOGOUT_LINK_AT_USER);
 		waitForElementClickAble(driver, BasePageUI.LOGOUT_LINK_AT_USER);
 		clickToElement(driver, BasePageUI.LOGOUT_LINK_AT_USER);
 		System.out.println("Logout poral page ");

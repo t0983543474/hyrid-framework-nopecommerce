@@ -20,4 +20,6 @@ public class BasePageUI {
 	public static final String INPUT_TEXTBOX_BY_ID = "xpath=//input[@id='%s']";
 	public static final String LINK_BY_TEXT = "xpath=//a[text()='%s']";
 	
+	public static final String SELECT_DROPDOWNL_BY_NAME = "xpath=//select[@name='%s']";
+	
 }

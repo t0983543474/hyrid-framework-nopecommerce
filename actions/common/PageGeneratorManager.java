@@ -6,10 +6,12 @@ import pageObjects.jquery.dataTable.HomePageObject;
 import pageObjects.nopecommerce.admin.AdminDashboardPageObject;
 import pageObjects.nopecommerce.admin.AdminLoginPageObject;
 import pageObjects.nopecommerce.user.UserAddressesPageObject;
+import pageObjects.nopecommerce.user.UserChangePasswordPageObject;
 import pageObjects.nopecommerce.user.UserCustomerInfoObject;
 import pageObjects.nopecommerce.user.UserHomePageObject;
 import pageObjects.nopecommerce.user.UserLoginPageObject;
 import pageObjects.nopecommerce.user.UserMyProductReviewsObject;
+import pageObjects.nopecommerce.user.UserProductReviewPageObject;
 import pageObjects.nopecommerce.user.UserRegisterPageObject;
 import pageObjects.nopecommerce.user.UserRewardPonitObject;
 
@@ -50,6 +52,13 @@ public class PageGeneratorManager {
 		return new AdminDashboardPageObject(driver);
 	}
 
+	public static UserChangePasswordPageObject getUserChangePasswordPageObject(WebDriver driver) {
+		return new UserChangePasswordPageObject(driver);
+	}
+	
+	public static UserProductReviewPageObject getUserProductReviewPageObject(WebDriver driver) {
+		return new UserProductReviewPageObject(driver);
+	}
 	// Jquery DataTable 
 
 
