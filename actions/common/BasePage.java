@@ -26,6 +26,7 @@ import com.nopecommerce.common.Common_01_Register_Cookies;
 import io.qameta.allure.Step;
 import okio.Timeout;
 import pageObjects.nopecommerce.admin.AdminLoginPageObject;
+import pageObjects.nopecommerce.searchSort.UserSearchPageObject;
 import pageObjects.nopecommerce.user.UserAddressesPageObject;
 import pageObjects.nopecommerce.user.UserChangePasswordPageObject;
 import pageObjects.nopecommerce.user.UserCustomerInfoPageObject;
@@ -417,6 +418,12 @@ public class BasePage {
 //		action.sendKeys(keys)(getWebElement(driver, locator));
 	}
 	
+	public void pressKeyToElement(WebDriver driver,String typeLocator,  Keys key) {
+		Actions action = new Actions(driver);
+		action.sendKeys(getWebElement(driver, typeLocator), key).perform();
+//		action.sendKeys(keys)(getWebElement(driver, locator));
+	}
+	
 	
 	protected Object executeForBrowser(WebDriver driver, String javaScript) {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor)driver;
@@ -621,6 +628,13 @@ public class BasePage {
 		waitForElementClickAble(driver, BasePageUI.REWARD_POINTS_LINK);
 		clickToElement(driver, BasePageUI.REWARD_POINTS_LINK);
 		return PageGeneratorManager.getUserChangePasswordPageObject(driver);
+	}
+	
+	public UserSearchPageObject inputSearchTextAndSearch(WebDriver driver , String searchText) {
+		waitForElementVisible(driver, BasePageUI.SEARCH_TEXTBOX);
+		sendKeyToElement(driver, BasePageUI.SEARCH_TEXTBOX, searchText);
+		pressKeyToElement(driver,BasePageUI.SEARCH_TEXTBOX, Keys.ENTER);
+		return new UserSearchPageObject(driver);
 	}
 	
 	

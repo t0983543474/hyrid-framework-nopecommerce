@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import pageObjects.jquery.dataTable.HomePageObject;
 import pageObjects.nopecommerce.admin.AdminDashboardPageObject;
 import pageObjects.nopecommerce.admin.AdminLoginPageObject;
+import pageObjects.nopecommerce.searchSort.UserSearchPageObject;
 import pageObjects.nopecommerce.user.UserAddressesPageObject;
 import pageObjects.nopecommerce.user.UserChangePasswordPageObject;
 import pageObjects.nopecommerce.user.UserCustomerInfoPageObject;
@@ -61,6 +62,10 @@ public class PageGeneratorManager {
 	}
 	// Jquery DataTable 
 
+	
+	public static UserSearchPageObject getUserSearchObject(WebDriver driver) {
+		return new UserSearchPageObject(driver);
+	}
 
 
 

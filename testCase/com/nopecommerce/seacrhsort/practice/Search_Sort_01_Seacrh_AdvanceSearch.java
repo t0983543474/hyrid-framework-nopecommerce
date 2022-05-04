@@ -1,8 +1,11 @@
 package com.nopecommerce.seacrhsort.practice;
 
 import java.lang.reflect.Method;
+import java.util.Iterator;
+import java.util.List;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -10,22 +13,23 @@ import org.testng.annotations.Test;
 
 import common.BaseTest;
 import common.PageGeneratorManager;
+import pageObjects.nopecommerce.searchSort.UserSearchPageObject;
 import pageObjects.nopecommerce.user.UserHomePageObject;
 import pageObjects.nopecommerce.user.UserLoginPageObject;
 import reportExtentV5Config.ExtentTestManager;
 
 public class Search_Sort_01_Seacrh_AdvanceSearch extends BaseTest{
 	WebDriver driver;
-	UserHomePageObject userHomePage;
+	UserHomePageObject homePage;
 	UserLoginPageObject loginPage;
 	String invalidEmail = "imavlidemail@";
-
+	UserSearchPageObject searchPage;
 
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
 		driver = getBrowser(browserName);
-		userHomePage = PageGeneratorManager.getUserHomPageObject(driver);
+		homePage = PageGeneratorManager.getUserHomPageObject(driver);
 		
 	}
 	
@@ -33,20 +37,35 @@ public class Search_Sort_01_Seacrh_AdvanceSearch extends BaseTest{
 	public void Search_01_Search_With_Empty_Data(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Search_01_Search_With_Empty_Data");
 		
+		searchPage = homePage.inputSearchTextAndSearch(driver, " ");
 		
+		Assert.assertEquals("Search term minimum length is 3 characters", searchPage.getWarningMessage());
 	}
 	
 	@Test
 	public void Search_02_Search_With_Data_Not_Exist(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Search_02_Search_With_Data_Not_Exist");
 		
+		searchPage.inputSearchTextAndSearch(driver, "Macbook pro 2050");
 		
+		Assert.assertEquals("No products were found that matched your criteria.", searchPage.getNoDataMessage());
 	}
 	
 	@Test
 	public void Search_03_Search_With_Product_Name(Method method) {
+		
+		String searchText = "Lenovo";
 		ExtentTestManager.startTest(method.getName(), "Search_03_Search_With_Product_Name");
 		
+		searchPage.inputSearchTextAndSearch(driver, searchText);
+		
+		List<String> seacrhResult = searchPage.getListSearchResult();
+		
+		Assert.assertEquals(2, seacrhResult.size());
+		
+		for (String result : seacrhResult) {
+			Assert.assertTrue(result.contains(searchText));
+		}
 		
 	}
 	
@@ -55,7 +74,17 @@ public class Search_Sort_01_Seacrh_AdvanceSearch extends BaseTest{
 	public void Search_04_Search_With_Product_Name_Absolute(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Search_04_Search_With_Product_Name_Absolute");
 		
+		String searchText = "Thinkpad X1 Carbon Laptop";
 		
+		searchPage.inputSearchTextAndSearch(driver, searchText);
+		
+		List<String> seacrhResult = searchPage.getListSearchResult();
+		
+		Assert.assertEquals(1, seacrhResult.size());
+		
+		for (String result : seacrhResult) {
+			Assert.assertTrue(result.contains(searchText));
+		}
 	}
 	
 	

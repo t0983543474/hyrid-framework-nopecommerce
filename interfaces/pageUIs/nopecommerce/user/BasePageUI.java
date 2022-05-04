@@ -22,4 +22,7 @@ public class BasePageUI {
 	
 	public static final String SELECT_DROPDOWNL_BY_NAME = "xpath=//select[@name='%s']";
 	
+	public static final String  SEARCH_TEXTBOX = "xpath=//input[@id='small-searchterms']";
+	public static final String SEARCH_BTN  = "css=.search-box-button";
+	
 }
