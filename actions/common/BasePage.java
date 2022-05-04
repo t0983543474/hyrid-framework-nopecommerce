@@ -28,7 +28,7 @@ import okio.Timeout;
 import pageObjects.nopecommerce.admin.AdminLoginPageObject;
 import pageObjects.nopecommerce.user.UserAddressesPageObject;
 import pageObjects.nopecommerce.user.UserChangePasswordPageObject;
-import pageObjects.nopecommerce.user.UserCustomerInfoObject;
+import pageObjects.nopecommerce.user.UserCustomerInfoPageObject;
 import pageObjects.nopecommerce.user.UserHomePageObject;
 import pageObjects.nopecommerce.user.UserMyProductReviewsObject;
 import pageObjects.nopecommerce.user.UserRegisterPageObject;
@@ -599,7 +599,7 @@ public class BasePage {
 		return PageGeneratorManager.getUserAddressesPageObject(driver);
 	}
 	
-	public UserCustomerInfoObject openUserCustomerInfoPage(WebDriver driver) {
+	public UserCustomerInfoPageObject openUserCustomerInfoPage(WebDriver driver) {
 		waitForElementClickAble(driver, BasePageUI.CUSTOMER_INFO_LINK);
 		clickToElement(driver, BasePageUI.CUSTOMER_INFO_LINK);
 		return PageGeneratorManager.getUserCustomerPageObject(driver);
@@ -648,7 +648,7 @@ public class BasePage {
 	}
 	
 	
-	public UserCustomerInfoObject clickMyAccountLink(WebDriver driver) {
+	public UserCustomerInfoPageObject clickMyAccountLink(WebDriver driver) {
 		waitForElementClickAble(driver, UserHomePageUI.MYACCOUNT_LINK);
 		clickToElement(driver, UserHomePageUI.MYACCOUNT_LINK);
 		return PageGeneratorManager.getUserCustomerPageObject(driver);

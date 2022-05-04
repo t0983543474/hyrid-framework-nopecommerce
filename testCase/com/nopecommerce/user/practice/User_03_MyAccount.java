@@ -16,7 +16,7 @@ import common.BaseTest;
 import common.PageGeneratorManager;
 import pageObjects.nopecommerce.user.UserAddressesPageObject;
 import pageObjects.nopecommerce.user.UserChangePasswordPageObject;
-import pageObjects.nopecommerce.user.UserCustomerInfoObject;
+import pageObjects.nopecommerce.user.UserCustomerInfoPageObject;
 import pageObjects.nopecommerce.user.UserHomePageObject;
 import pageObjects.nopecommerce.user.UserLoginPageObject;
 import pageObjects.nopecommerce.user.UserMyProductReviewsObject;
@@ -28,7 +28,7 @@ public class User_03_MyAccount extends BaseTest {
 	WebDriver driver;
 	UserHomePageObject userHomePage;
 	UserLoginPageObject loginPage;
-	UserCustomerInfoObject customerPage;
+	UserCustomerInfoPageObject customerPage;
 	UserAddressesPageObject addressPage;
 	String invalidEmail = "imavlidemail@";
 	String firstName = "nana", lastName = "kaka", company = "IT company";

@@ -10,7 +10,7 @@ import common.BaseTest;
 import common.PageGeneratorManager;
 import pageObjects.nopecommerce.admin.AdminDashboardPageObject;
 import pageObjects.nopecommerce.admin.AdminLoginPageObject;
-import pageObjects.nopecommerce.user.UserCustomerInfoObject;
+import pageObjects.nopecommerce.user.UserCustomerInfoPageObject;
 import pageObjects.nopecommerce.user.UserHomePageObject;
 import pageObjects.nopecommerce.user.UserLoginPageObject;
 import pageObjects.nopecommerce.user.UserRegisterPageObject;
@@ -25,7 +25,7 @@ public class Common_01_Register extends BaseTest{
 	UserLoginPageObject userLoginPage;
 	AdminLoginPageObject adminLoginPage;
 	AdminDashboardPageObject adminDashboardPage;
-	UserCustomerInfoObject userCustomerInfoPage;
+	UserCustomerInfoPageObject userCustomerInfoPage;
 
 	public static String email;
 	public static String userPassword = "123456";

@@ -5,9 +5,9 @@ import org.openqa.selenium.WebDriver;
 import common.BasePage;
 import pageUIs.nopecommerce.user.UserCustomerInfoUI;
 
-public class UserCustomerInfoObject extends BasePage {
+public class UserCustomerInfoPageObject extends BasePage {
 	WebDriver driver;
-	public UserCustomerInfoObject(WebDriver driver) {
+	public UserCustomerInfoPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 	

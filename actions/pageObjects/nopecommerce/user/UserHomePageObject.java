@@ -37,7 +37,7 @@ public class UserHomePageObject extends BasePage {
 	}
 	
 	@Step("Open customer page")
-	public UserCustomerInfoObject openCustomerInfoPage() {
+	public UserCustomerInfoPageObject openCustomerInfoPage() {
 		waitForElementClickAble(driver, UserHomePageUI.MYACCOUNT_LINK);
 		clickToElement(driver, UserHomePageUI.MYACCOUNT_LINK);
 		return PageGeneratorManager.getUserCustomerPageObject(driver);

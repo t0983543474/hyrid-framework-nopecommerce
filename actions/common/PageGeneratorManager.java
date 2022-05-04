@@ -7,7 +7,7 @@ import pageObjects.nopecommerce.admin.AdminDashboardPageObject;
 import pageObjects.nopecommerce.admin.AdminLoginPageObject;
 import pageObjects.nopecommerce.user.UserAddressesPageObject;
 import pageObjects.nopecommerce.user.UserChangePasswordPageObject;
-import pageObjects.nopecommerce.user.UserCustomerInfoObject;
+import pageObjects.nopecommerce.user.UserCustomerInfoPageObject;
 import pageObjects.nopecommerce.user.UserHomePageObject;
 import pageObjects.nopecommerce.user.UserLoginPageObject;
 import pageObjects.nopecommerce.user.UserMyProductReviewsObject;
@@ -30,8 +30,8 @@ public class PageGeneratorManager {
 		return new UserLoginPageObject(driver);
 	}
 	
-	public static UserCustomerInfoObject getUserCustomerPageObject(WebDriver driver) {
-		return new UserCustomerInfoObject(driver);
+	public static UserCustomerInfoPageObject getUserCustomerPageObject(WebDriver driver) {
+		return new UserCustomerInfoPageObject(driver);
 	}
 	
 	public static UserAddressesPageObject getUserAddressesPageObject(WebDriver driver) {

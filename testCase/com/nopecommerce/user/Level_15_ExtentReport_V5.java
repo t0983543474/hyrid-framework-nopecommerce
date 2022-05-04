@@ -20,7 +20,7 @@ import common.GlobalConstants;
 import common.PageGeneratorManager;
 import pageObjects.nopecommerce.admin.AdminDashboardPageObject;
 import pageObjects.nopecommerce.admin.AdminLoginPageObject;
-import pageObjects.nopecommerce.user.UserCustomerInfoObject;
+import pageObjects.nopecommerce.user.UserCustomerInfoPageObject;
 import pageObjects.nopecommerce.user.UserHomePageObject;
 import pageObjects.nopecommerce.user.UserLoginPageObject;
 import pageObjects.nopecommerce.user.UserRegisterPageObject;
@@ -36,7 +36,7 @@ public class Level_15_ExtentReport_V5 extends BaseTest{
 	UserLoginPageObject userLoginPage;
 	AdminLoginPageObject adminLoginPage;
 	AdminDashboardPageObject adminDashboardPage;
-	UserCustomerInfoObject userCustomerInfoPage;
+	UserCustomerInfoPageObject userCustomerInfoPage;
 
 	String userEmailAddress;
 	String userFirstName = "Test", userLastName = "Automation", userPassword = "123456", userConfirmPassword = "123456";

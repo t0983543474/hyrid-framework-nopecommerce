@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import common.BaseTest;
 import common.PageGeneratorManager;
 import pageObjects.nopecommerce.user.UserAddressesPageObject;
-import pageObjects.nopecommerce.user.UserCustomerInfoObject;
+import pageObjects.nopecommerce.user.UserCustomerInfoPageObject;
 import pageObjects.nopecommerce.user.UserHomePageObject;
 import pageObjects.nopecommerce.user.UserLoginPageObject;
 import pageObjects.nopecommerce.user.UserMyProductReviewsObject;
@@ -23,7 +23,7 @@ public class Level_09_Dynamic_Locator extends BaseTest{
 	UserHomePageObject homePage;
 	UserRegisterPageObject registerPage;
 	UserLoginPageObject loginPage;
-	UserCustomerInfoObject customerInfoPage;
+	UserCustomerInfoPageObject customerInfoPage;
 	UserAddressesPageObject addressesPage ;
 	UserMyProductReviewsObject myProductReviewsPage;
 	UserRewardPonitObject rewardPonitPage;

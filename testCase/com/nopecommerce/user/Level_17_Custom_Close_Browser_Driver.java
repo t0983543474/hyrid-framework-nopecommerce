@@ -21,7 +21,7 @@ import common.GlobalConstants;
 import common.PageGeneratorManager;
 import pageObjects.nopecommerce.admin.AdminDashboardPageObject;
 import pageObjects.nopecommerce.admin.AdminLoginPageObject;
-import pageObjects.nopecommerce.user.UserCustomerInfoObject;
+import pageObjects.nopecommerce.user.UserCustomerInfoPageObject;
 import pageObjects.nopecommerce.user.UserHomePageObject;
 import pageObjects.nopecommerce.user.UserLoginPageObject;
 import pageObjects.nopecommerce.user.UserRegisterPageObject;
@@ -37,7 +37,7 @@ public class Level_17_Custom_Close_Browser_Driver extends BaseTest{
 	UserLoginPageObject userLoginPage;
 	AdminLoginPageObject adminLoginPage;
 	AdminDashboardPageObject adminDashboardPage;
-	UserCustomerInfoObject userCustomerInfoPage;
+	UserCustomerInfoPageObject userCustomerInfoPage;
 	String adminEmail = "admin@yourstore.com" , adminPassword = "admin";
 	
 	@Parameters("browser")

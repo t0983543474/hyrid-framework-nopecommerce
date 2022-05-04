@@ -11,7 +11,7 @@ import common.BaseTest;
 import pageObjects.jquery.dataTable.HomePageObject;
 import pageObjects.jquery.dataTable.PageGeneratorManager;
 import pageObjects.nopecommerce.user.UserAddressesPageObject;
-import pageObjects.nopecommerce.user.UserCustomerInfoObject;
+import pageObjects.nopecommerce.user.UserCustomerInfoPageObject;
 import pageObjects.nopecommerce.user.UserHomePageObject;
 import pageObjects.nopecommerce.user.UserLoginPageObject;
 import pageObjects.nopecommerce.user.UserMyProductReviewsObject;
