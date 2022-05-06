@@ -26,7 +26,7 @@ import com.nopecommerce.common.Common_01_Register_Cookies;
 import io.qameta.allure.Step;
 import okio.Timeout;
 import pageObjects.nopecommerce.admin.AdminLoginPageObject;
-import pageObjects.nopecommerce.searchSort.UserSearchPageObject;
+import pageObjects.nopecommerce.product.UserProductPageObject;
 import pageObjects.nopecommerce.user.UserAddressesPageObject;
 import pageObjects.nopecommerce.user.UserChangePasswordPageObject;
 import pageObjects.nopecommerce.user.UserCustomerInfoPageObject;
@@ -630,11 +630,21 @@ public class BasePage {
 		return PageGeneratorManager.getUserChangePasswordPageObject(driver);
 	}
 	
-	public UserSearchPageObject inputSearchTextAndSearch(WebDriver driver , String searchText) {
+	public UserProductPageObject inputSearchTextAndSearch(WebDriver driver , String searchText) {
 		waitForElementVisible(driver, BasePageUI.SEARCH_TEXTBOX);
 		sendKeyToElement(driver, BasePageUI.SEARCH_TEXTBOX, searchText);
 		pressKeyToElement(driver,BasePageUI.SEARCH_TEXTBOX, Keys.ENTER);
-		return new UserSearchPageObject(driver);
+		return new UserProductPageObject(driver);
+	}
+	
+	public void clickSubMenuInMenuByText(WebDriver driver, String menu, String submenu) {
+		String menuLocation = getDynamicXpath(BasePageUI.LINK_MENU_NOTMOBILE, menu);
+		String submenuLocation = getDynamicXpath(BasePageUI.LINK_MENU_NOTMOBILE, submenu);
+		waitForAllElementVisible(driver, menuLocation);
+		hoverMouseToElement(driver, menuLocation);
+		waitForAllElementVisible(driver, submenuLocation);
+		clickToElement(driver, submenuLocation);
+		
 	}
 	
 	

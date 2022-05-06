@@ -25,4 +25,6 @@ public class BasePageUI {
 	public static final String  SEARCH_TEXTBOX = "xpath=//input[@id='small-searchterms']";
 	public static final String SEARCH_BTN  = "css=.search-box-button";
 	
+	public static final String LINK_MENU_NOTMOBILE = "xpath=//ul[@class='top-menu notmobile']//a[text()='%s']";
+	
 }

@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import common.BaseTest;
 import common.PageGeneratorManager;
-import pageObjects.nopecommerce.searchSort.UserSearchPageObject;
+import pageObjects.nopecommerce.product.UserProductPageObject;
 import pageObjects.nopecommerce.user.UserHomePageObject;
 import pageObjects.nopecommerce.user.UserLoginPageObject;
 import reportExtentV5Config.ExtentTestManager;
@@ -23,7 +23,7 @@ public class Search_Sort_01_Seacrh_AdvanceSearch extends BaseTest{
 	UserHomePageObject homePage;
 	UserLoginPageObject loginPage;
 	String invalidEmail = "imavlidemail@";
-	UserSearchPageObject searchPage;
+	UserProductPageObject searchPage;
 
 	@Parameters("browser")
 	@BeforeClass
@@ -59,7 +59,7 @@ public class Search_Sort_01_Seacrh_AdvanceSearch extends BaseTest{
 		
 		searchPage.inputSearchTextAndSearch(driver, searchText);
 		
-		List<String> seacrhResult = searchPage.getListSearchResult();
+		List<String> seacrhResult = searchPage.getListProducts();
 		
 		Assert.assertEquals(2, seacrhResult.size());
 		
@@ -78,7 +78,7 @@ public class Search_Sort_01_Seacrh_AdvanceSearch extends BaseTest{
 		
 		searchPage.inputSearchTextAndSearch(driver, searchText);
 		
-		List<String> seacrhResult = searchPage.getListSearchResult();
+		List<String> seacrhResult = searchPage.getListProducts();
 		
 		Assert.assertEquals(1, seacrhResult.size());
 		
@@ -92,7 +92,20 @@ public class Search_Sort_01_Seacrh_AdvanceSearch extends BaseTest{
 	public void Search_05_Advance_Search_With_Parent_Categories(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Search_05_Advance_Search_With_Parent_Categories");
 		
+		String searchText = "Apple MacBook Pro";
 		
+		searchPage.inputSearchTextAndSearch(driver, searchText);
+		
+		searchPage.checkAdvanceSearch();
+		
+		searchPage.selectCategory("Computers");
+		
+		searchPage.uncheckSubCategory();
+		
+		searchPage.clickSearch();
+	
+		
+		Assert.assertEquals("No products were found that matched your criteria.", searchPage.getNoDataMessage());
 	}
 	
 	
@@ -100,7 +113,23 @@ public class Search_Sort_01_Seacrh_AdvanceSearch extends BaseTest{
 	public void Search_06_Advance_Search_With_Sub_Categories(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Search_06_Advance_Search_With_Sub_Categories");
 		
+	String searchText = "Apple MacBook Pro";
 		
+		searchPage.inputSearchTextAndSearch(driver, searchText);
+		
+		searchPage.checkAdvanceSearch();
+		
+		searchPage.selectCategory("Computers");
+		
+		searchPage.checkSubCategory();
+		
+		searchPage.clickSearch();
+		List<String> seacrhResult = searchPage.getListProducts();
+		Assert.assertEquals(1, seacrhResult.size());
+		
+		for (String result : seacrhResult) {
+			Assert.assertTrue(result.contains(searchText));
+		}
 	}
 	
 	
@@ -108,7 +137,22 @@ public class Search_Sort_01_Seacrh_AdvanceSearch extends BaseTest{
 	public void Search_07_Advance_Search_With_Incorrect_Manufacture(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Search_07_Advance_Search_With_Incorrect_Manufacture");
 		
+	String searchText = "Apple MacBook Pro";
 		
+		searchPage.inputSearchTextAndSearch(driver, searchText);
+		
+		searchPage.checkAdvanceSearch();
+		
+		searchPage.selectCategory("Computers");
+		
+		searchPage.checkSubCategory();
+		
+		searchPage.selectmanufactuer("HP");
+		
+		searchPage.clickSearch();
+	
+		
+		Assert.assertEquals("No products were found that matched your criteria.", searchPage.getNoDataMessage());
 	}
 	
 	
@@ -116,7 +160,28 @@ public class Search_Sort_01_Seacrh_AdvanceSearch extends BaseTest{
 	public void Search_08_Advance_Search_With_Correct_Manufacture(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Search_08_Advance_Search_With_Correct_Manufacture");
 		
+		ExtentTestManager.startTest(method.getName(), "Search_07_Advance_Search_With_Incorrect_Manufacture");
 		
+		String searchText = "Apple MacBook Pro";
+			
+			searchPage.inputSearchTextAndSearch(driver, searchText);
+			
+			searchPage.checkAdvanceSearch();
+			
+			searchPage.selectCategory("Computers");
+			
+			searchPage.checkSubCategory();
+			
+			searchPage.selectmanufactuer("Apple");
+			
+			searchPage.clickSearch();
+			
+			List<String> seacrhResult = searchPage.getListProducts();
+			Assert.assertEquals(1, seacrhResult.size());
+			
+			for (String result : seacrhResult) {
+				Assert.assertTrue(result.contains(searchText));
+			}
 	}
 	
 	
