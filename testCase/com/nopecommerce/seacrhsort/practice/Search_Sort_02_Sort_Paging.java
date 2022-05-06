@@ -113,7 +113,15 @@ public class Search_Sort_02_Sort_Paging extends BaseTest {
 		
 		Assert.assertTrue(products.size()<=3);
 		
+		Assert.assertTrue(productPage.isCurrentpageNumber("1"));
 		
+		Assert.assertTrue(productPage.isDisplayNextIcon());
+		
+		productPage.clickPageByNumber("2");
+		
+		Assert.assertTrue(productPage.isCurrentpageNumber("2"));
+		
+		Assert.assertTrue(productPage.isDisplayPreviousIcon());
 		
 		
 	}
@@ -122,7 +130,13 @@ public class Search_Sort_02_Sort_Paging extends BaseTest {
 	public void Sort_Paging_06_Display_6_Product_Page(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Sort_Paging_06_Display_6_Product_Page");
 		
+		productPage.selectDisplayPerPaging("6");
 		
+		List<String> products = productPage.getListProducts();
+		
+		Assert.assertTrue(products.size()<=6);
+		
+		Assert.assertTrue(productPage.isNotPaging());
 	}
 	
 	@Test
@@ -130,6 +144,13 @@ public class Search_Sort_02_Sort_Paging extends BaseTest {
 		ExtentTestManager.startTest(method.getName(), "Sort_Paging_07_Display_9_Product_Page");
 		
 		
+		productPage.selectDisplayPerPaging("9");
+		
+		List<String> products = productPage.getListProducts();
+		
+		Assert.assertTrue(products.size()<=9);
+		
+		Assert.assertTrue(productPage.isNotPaging());
 	}
 	
 

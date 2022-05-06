@@ -104,9 +104,14 @@ public class UserProductPageObject extends BasePage {
 		clickToElement(driver, UserProductPageUI.INDIVIDUAL_PAGE_BTN, pageNumber);
 	}
 	
-//	public boolean isDisplayPreviousIcon() {
-//		waitForElementVisible(driver, UserProductPageUI.PREVIOUS_BTN);
-//		return isElementDisplay(driver, UserProductPageUI.PREVIOUS_BTN);
-//	}
+	public boolean isCurrentpageNumber(String currentPage) {
+		waitForElementVisible(driver, UserProductPageUI.CURRENT_PAGE_BTN, currentPage);
+		return isElementDisplay(driver, UserProductPageUI.CURRENT_PAGE_BTN, currentPage);
+	}
+	
+	public boolean isNotPaging() {
+		waitForElementInvisible(driver, UserProductPageUI.PAGING_DIV);
+		return isElementUnDisplay(driver, UserProductPageUI.PAGING_DIV);
+	}
 	
 }

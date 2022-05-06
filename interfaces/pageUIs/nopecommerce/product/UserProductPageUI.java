@@ -40,5 +40,6 @@ public class UserProductPageUI {
 	
 	public static final String LOADING_ICON ="css=.ajax-products-busy";
 	
+	public static final String PAGING_DIV = "css=div.pager";
 	
 }
