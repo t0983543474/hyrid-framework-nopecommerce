@@ -13,7 +13,7 @@
   <parameter name = "browser" value = "Chrome"/>
     <classes> 
      <!-- <class name="com.nopecommerce.common.Common_01_Register"/> -->	
-     	<class name="com.nopecommerce.seacrhsort.practice.Search_Sort_02_Sort_Paging"/>
+     	<class name="com.nopecommerce.product.practice.Product_02_Sort_Paging"/>
      
     </classes>
   </test> <!-- Test -->

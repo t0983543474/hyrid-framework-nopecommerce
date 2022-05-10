@@ -1,4 +1,4 @@
-package com.nopecommerce.seacrhsort.practice;
+package com.nopecommerce.product.practice;
 
 import java.lang.reflect.Method;
 import java.util.Iterator;
@@ -18,7 +18,7 @@ import pageObjects.nopecommerce.user.UserHomePageObject;
 import pageObjects.nopecommerce.user.UserLoginPageObject;
 import reportExtentV5Config.ExtentTestManager;
 
-public class Search_Sort_01_Seacrh_AdvanceSearch extends BaseTest{
+public class Product_01_Seacrh_AdvanceSearch extends BaseTest{
 	WebDriver driver;
 	UserHomePageObject homePage;
 	UserLoginPageObject loginPage;

@@ -1,4 +1,4 @@
-package com.nopecommerce.seacrhsort.practice;
+package com.nopecommerce.product.practice;
 
 
 import java.lang.reflect.Method;
@@ -22,7 +22,7 @@ import pageObjects.nopecommerce.product.UserProductPageObject;
 import pageObjects.nopecommerce.user.UserHomePageObject;
 import reportExtentV5Config.ExtentTestManager;
 
-public class Search_Sort_02_Sort_Paging extends BaseTest {
+public class Product_02_Sort_Paging extends BaseTest {
 	WebDriver driver;
 	UserHomePageObject homePage;
 	UserProductPageObject productPage;
