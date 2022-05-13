@@ -27,4 +27,10 @@ public class BasePageUI {
 	
 	public static final String LINK_MENU_NOTMOBILE = "xpath=//ul[@class='top-menu notmobile']//a[text()='%s']";
 	
+	public static final String TOP_CART_LINK = "css=#topcartlink a";
+	
+	public static final String TOP_WISHLIST_LINK ="css=a.ico-wishlist";
+	
+	public static final String QUANTITY_WISHLIST = "css=.ico-wishlist .wishlist-qty";
+	
 }

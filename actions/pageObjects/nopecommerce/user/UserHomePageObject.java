@@ -43,4 +43,22 @@ public class UserHomePageObject extends BasePage {
 		return PageGeneratorManager.getUserCustomerPageObject(driver);
 	}
 
+	public void clickAddCompareByProductName(String productName) {
+		// TODO Auto-generated method stub
+		waitForElementClickAble(driver, UserHomePageUI.COMPARE_BTN_BY_PRODUCT_NAME, productName);
+		clickToElement(driver, UserHomePageUI.COMPARE_BTN_BY_PRODUCT_NAME, productName);
+	}
+
+	public void clickCompareProductLink() {
+		// TODO Auto-generated method stub
+		waitForElementClickAble(driver, UserHomePageUI.COMPARE_LINK);
+		clickToElement(driver, UserHomePageUI.COMPARE_LINK);
+	}
+
+	public String getMessageAddCompare() {
+		// TODO Auto-generated method stub
+		waitForElementVisible(driver, UserHomePageUI.MESSAGE_ADD_COMPARE_SUCCESS);
+		return getElementText(driver, UserHomePageUI.MESSAGE_ADD_COMPARE_SUCCESS);
+	}
+
 }

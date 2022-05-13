@@ -63,7 +63,7 @@ public class BasePage {
 		return driver.getPageSource();
 	}
 	
-	protected void backToPage(WebDriver driver) {
+	public void backToPage(WebDriver driver) {
 		driver.navigate().back();
 	}
 	
@@ -645,6 +645,21 @@ public class BasePage {
 		waitForAllElementVisible(driver, submenuLocation);
 		clickToElement(driver, submenuLocation);
 		
+	}
+	
+	public void clickTopCartLink(WebDriver driver) {
+		waitForElementClickAble(driver, BasePageUI.TOP_CART_LINK);
+		clickToElement(driver, BasePageUI.TOP_CART_LINK);
+	}
+	
+	public void clickTopWishlistLink(WebDriver driver) {
+		waitForElementClickAble(driver, BasePageUI.TOP_WISHLIST_LINK);
+		clickToElement(driver, BasePageUI.TOP_WISHLIST_LINK);
+	}
+	
+	public String getQuantityWishlist(WebDriver driver) {
+		waitForElementVisible(driver, BasePageUI.QUANTITY_WISHLIST);
+		return getElementText(driver, BasePageUI.QUANTITY_WISHLIST).replace("(", "").replace(")", "");
 	}
 	
 	

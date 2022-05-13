@@ -29,7 +29,9 @@ public class Common_01_Register extends BaseTest{
 
 	public static String email;
 	public static String userPassword = "123456";
-	String userFirstName = "Test", userLastName = "Automation",  userConfirmPassword = "123456";
+	public  static String userFirstName = "Test";
+	public static String userLastName = "Automation" ;
+	String userConfirmPassword = "123456";
 	String adminEmail = "admin@yourstore.com" , adminPassword = "admin";
 
 	@Parameters("browser")
