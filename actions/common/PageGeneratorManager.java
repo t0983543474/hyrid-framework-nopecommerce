@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import pageObjects.jquery.dataTable.HomePageObject;
 import pageObjects.nopecommerce.admin.AdminDashboardPageObject;
 import pageObjects.nopecommerce.admin.AdminLoginPageObject;
+import pageObjects.nopecommerce.product.RecentlyViewedProductsPageObject;
 import pageObjects.nopecommerce.product.UserCompareProductPageObject;
 import pageObjects.nopecommerce.product.UserDetailProductPageObject;
 import pageObjects.nopecommerce.product.UserProductPageObject;
@@ -85,5 +86,9 @@ public class PageGeneratorManager {
 
 	public static UserCompareProductPageObject getUserCompareProductPageObject(WebDriver driver) {
 		 return new UserCompareProductPageObject(driver);
+	}
+	
+	public static RecentlyViewedProductsPageObject getRecentlyViewedProductsPageObject(WebDriver driver ) {
+		return new RecentlyViewedProductsPageObject(driver);
 	}
 }

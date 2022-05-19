@@ -25,5 +25,10 @@ public class UserDetailProductPageObject extends BasePage{
 		
 		}
 	
+	public String getProductName() {
+		waitForElementVisible(driver, UserDetailProductPageUI.PRODUCT_NAME);
+		return getElementText(driver, UserDetailProductPageUI.PRODUCT_NAME);
+	}
+	
 	
 }

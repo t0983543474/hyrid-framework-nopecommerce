@@ -15,6 +15,7 @@ import com.nopecommerce.common.Common_01_Register;
 
 import common.BaseTest;
 import common.PageGeneratorManager;
+import pageObjects.nopecommerce.product.RecentlyViewedProductsPageObject;
 import pageObjects.nopecommerce.product.UserCompareProductPageObject;
 import pageObjects.nopecommerce.product.UserDetailProductPageObject;
 import pageObjects.nopecommerce.product.UserProductPageObject;
@@ -34,6 +35,7 @@ public class Product_03_Wishlist_Conpare_Review extends BaseTest{
 	UserWishlistPageObject wishlistPage;
 	UserShopingCardPageObject shopingCartPage;
 	UserCompareProductPageObject compareProductPage;
+	RecentlyViewedProductsPageObject recentlyViewedProductPage;
 	
 
 	@Parameters("browser")
@@ -125,28 +127,42 @@ public class Product_03_Wishlist_Conpare_Review extends BaseTest{
 		wishlistPage.clickLogo(driver);
 		homePage = PageGeneratorManager.getUserHomPageObject(driver);
 		
+		String price1 = homePage.getPriceOfProductName(productName);
+		String price2 = homePage.getPriceOfProductName(product2);
 		homePage.clickAddCompareByProductName(productName);
-		homePage.clickAddCompareByProductName(product2);
-		
 		Assert.assertEquals("The product has been added to your product comparison", homePage.getMessageAddCompare());
+		homePage.clickCloseMessageCompare();
+		sleepSecond(2);
+		homePage.clickAddCompareByProductName(product2);
+	
+		Assert.assertEquals("The product has been added to your product comparison", homePage.getMessageAddCompare());
+	
+		compareProductPage= homePage.clickCompareProductLink();
 		
-		homePage.clickCompareProductLink();
+		List<String> productNameList = compareProductPage.getListProductName();
+		System.out.println("size = " + productNameList.size());
+		for (int i = 0; i < productNameList.size(); i++) {
+			String index = Integer.toString(i+2);
+			String price = compareProductPage.getPriceByIndex(index);
+			String name = compareProductPage.getProductNameByIndex(index);
 		
-		Assert.assertTrue(compareProductPage.displayRemoveProductByProductName(productName));
+			
+			if(name.equals(productName)) {
+				
+				Assert.assertTrue(compareProductPage.isDisplayRemoveByIndex(index));
+				Assert.assertEquals(price, price1);
+				Assert.assertEquals(name, productName);
+			}else if(name.equals(product2)) {
+				Assert.assertTrue(compareProductPage.isDisplayRemoveByIndex(index));
+				Assert.assertEquals(price, price2);
+				Assert.assertEquals(name, product2);
+			}
+		}
 		
-		Assert.assertTrue(compareProductPage.displayRemoveProductByProductName(product2));
-		
-		Assert.assertTrue(compareProductPage.getProductListInComparePage().contains(productName));
-		
-		Assert.assertTrue(compareProductPage.getProductListInComparePage().contains(product2));
-		
-		Assert.assertEquals(false, compareProductPage.getPriceByProductName(productName));
-		
-		Assert.assertEquals(false, compareProductPage.getPriceByProductName(product2));
 		
 		compareProductPage.clickClearList();
 		
-		Assert.assertEquals("", compareProductPage.getMessageClearList());
+		Assert.assertEquals("You have no items to compare.", compareProductPage.getMessageClearList());
 		
 		Assert.assertTrue(compareProductPage.isNotDisplayProductInCompage());
 	}
@@ -155,7 +171,58 @@ public class Product_03_Wishlist_Conpare_Review extends BaseTest{
 	public void Wishlist_Conpare_Review_05_Recently_Reviewd_Prouct(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Wishlist_Conpare_Review_05_Recently_Reviewd_Prouct");
 		
+		// change
+		compareProductPage.clickSubMenuInMenuByText(driver, "Computers ", "Notebooks ");
+		String prod1 = "Apple MacBook Pro 13-inch", prod2 =  "Asus N551JK-XO076H Laptop", prod3 = "HP Envy 6-1180ca 15.6-Inch Sleekbook", prod4 = "HP Spectre XT Pro UltraBook" , prod5 = "Lenovo Thinkpad X1 Carbon Laptop";
 		
+		productPage = PageGeneratorManager.getUserProductPageObject(driver);
+		
+	 	detailProductPage =  productPage.clickViewDetailProduct(prod1);
+	 	
+	 	Assert.assertEquals(prod1, detailProductPage.getProductName());
+	 	
+	 	detailProductPage.backToPage(driver);
+	 	
+	 	productPage = PageGeneratorManager.getUserProductPageObject(driver);
+	 	
+	 
+	 	detailProductPage =  productPage.clickViewDetailProduct(prod2);
+	 	
+	 	Assert.assertEquals(prod2, detailProductPage.getProductName());
+	 	
+	 	detailProductPage.backToPage(driver);
+	 	
+	 	productPage = PageGeneratorManager.getUserProductPageObject(driver);
+	 	
+	 	detailProductPage =  productPage.clickViewDetailProduct(prod3);
+	 	
+	 	Assert.assertEquals(prod3, detailProductPage.getProductName());
+	 	
+	 	detailProductPage.backToPage(driver);
+	 	
+	 	productPage = PageGeneratorManager.getUserProductPageObject(driver);
+	 	
+	 	detailProductPage =  productPage.clickViewDetailProduct(prod4);
+	 	
+	 	Assert.assertEquals(prod4, detailProductPage.getProductName());
+	 	
+	 	detailProductPage.backToPage(driver);
+	 	
+	 	productPage = PageGeneratorManager.getUserProductPageObject(driver);
+	 	
+	 	detailProductPage =  productPage.clickViewDetailProduct(prod5);
+	 	
+	 	Assert.assertEquals(prod5, detailProductPage.getProductName());
+	 	
+	 	detailProductPage.clickToLinkByText(driver, "Recently viewed products");
+	 	
+	 	recentlyViewedProductPage = PageGeneratorManager.getRecentlyViewedProductsPageObject(driver);
+	 	
+	 	List<String> products = recentlyViewedProductPage.getProductNameList();
+	 	
+	 	for (String string : products) {
+			Assert.assertTrue(string.equals(prod3) || string.equals(prod4) || string.equals(prod5));
+		}
 	}
 
 	

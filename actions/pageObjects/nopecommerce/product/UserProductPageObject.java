@@ -7,7 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import common.BasePage;
+import common.PageGeneratorManager;
 import pageUIs.nopecommerce.product.UserProductPageUI;
+import pageUIs.nopecommerce.user.BasePageUI;
 
 public class UserProductPageObject extends BasePage {
 	WebDriver driver;
@@ -112,6 +114,12 @@ public class UserProductPageObject extends BasePage {
 	public boolean isNotPaging() {
 		waitForElementInvisible(driver, UserProductPageUI.PAGING_DIV);
 		return isElementUnDisplay(driver, UserProductPageUI.PAGING_DIV);
+	}
+	
+	public UserDetailProductPageObject clickViewDetailProduct(String productName) {
+		waitForElementClickAble(driver, UserProductPageUI.PRODUCT_TITLE, productName);
+		clickToElement(driver, UserProductPageUI.PRODUCT_TITLE, productName);
+		return PageGeneratorManager.getUserDetailProductPageObject(driver);
 	}
 	
 }

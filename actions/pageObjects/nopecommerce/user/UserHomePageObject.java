@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import common.BasePage;
 import common.PageGeneratorManager;
 import io.qameta.allure.Step;
+import pageObjects.nopecommerce.product.UserCompareProductPageObject;
+import pageUIs.nopecommerce.product.UserCompareProductPageUI;
 import pageUIs.nopecommerce.user.UserHomePageUI;
 
 public class UserHomePageObject extends BasePage {
@@ -47,18 +49,30 @@ public class UserHomePageObject extends BasePage {
 		// TODO Auto-generated method stub
 		waitForElementClickAble(driver, UserHomePageUI.COMPARE_BTN_BY_PRODUCT_NAME, productName);
 		clickToElement(driver, UserHomePageUI.COMPARE_BTN_BY_PRODUCT_NAME, productName);
+		System.out.println("CLick product name" + productName);
 	}
 
-	public void clickCompareProductLink() {
+	public UserCompareProductPageObject clickCompareProductLink() {
 		// TODO Auto-generated method stub
 		waitForElementClickAble(driver, UserHomePageUI.COMPARE_LINK);
 		clickToElement(driver, UserHomePageUI.COMPARE_LINK);
+		return PageGeneratorManager.getUserCompareProductPageObject(driver);
 	}
 
 	public String getMessageAddCompare() {
 		// TODO Auto-generated method stub
 		waitForElementVisible(driver, UserHomePageUI.MESSAGE_ADD_COMPARE_SUCCESS);
 		return getElementText(driver, UserHomePageUI.MESSAGE_ADD_COMPARE_SUCCESS);
+	}
+
+	public String getPriceOfProductName(String productName) {
+		waitForAllElementVisible(driver, UserHomePageUI.PRICE_PRODUCT, productName);
+		return getElementText(driver, UserHomePageUI.PRICE_PRODUCT, productName);
+	}
+
+	public void clickCloseMessageCompare() {
+		waitForElementClickAble(driver, UserHomePageUI.CLOSE_MESSAGE_COMPARE_ICON);
+		clickToElement(driver, UserHomePageUI.CLOSE_MESSAGE_COMPARE_ICON);
 	}
 
 }

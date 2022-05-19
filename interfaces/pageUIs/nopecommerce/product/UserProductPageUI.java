@@ -42,4 +42,6 @@ public class UserProductPageUI {
 	
 	public static final String PAGING_DIV = "css=div.pager";
 	
+	public static final String PRODUCT_TITLE = "xpath=//div[@class='product-grid']//a[text()='%s']";
+	
 }

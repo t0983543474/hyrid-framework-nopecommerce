@@ -311,6 +311,11 @@ public class BasePage {
 		return getWebElement(driver, locator).getText();
 	}
 	
+	protected String getElementText(WebDriver driver, String locator, String...dynamicValue) {
+		locator = getDynamicXpath(locator, dynamicValue);
+		return getWebElement(driver, locator).getText();
+	}
+	
 	protected String getElementCssvalue(WebDriver driver, String locator, String propertyName) {
 		return getWebElement(driver, locator).getCssValue(propertyName);
 	}
