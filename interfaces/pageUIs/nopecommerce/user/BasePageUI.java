@@ -33,4 +33,6 @@ public class BasePageUI {
 	
 	public static final String QUANTITY_WISHLIST = "css=.ico-wishlist .wishlist-qty";
 	
+
+	
 }

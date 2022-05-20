@@ -2,6 +2,8 @@ package common;
 
 import org.openqa.selenium.WebDriver;
 
+import com.nopecommerce.product.practice.UserTopComponentPageObject;
+
 import pageObjects.jquery.dataTable.HomePageObject;
 import pageObjects.nopecommerce.admin.AdminDashboardPageObject;
 import pageObjects.nopecommerce.admin.AdminLoginPageObject;
@@ -90,5 +92,9 @@ public class PageGeneratorManager {
 	
 	public static RecentlyViewedProductsPageObject getRecentlyViewedProductsPageObject(WebDriver driver ) {
 		return new RecentlyViewedProductsPageObject(driver);
+	}
+	
+	public static UserTopComponentPageObject getUserTopComponentPageObject(WebDriver driver) {
+		return new UserTopComponentPageObject(driver);
 	}
 }

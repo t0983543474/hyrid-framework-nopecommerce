@@ -393,6 +393,29 @@ public class BasePage {
 			return undisplay;
 	}
 	
+	protected boolean isElementUnDisplay(WebDriver driver, String locator, String...dynamicValue) {
+		
+		locator = getDynamicXpath(locator, dynamicValue);
+		boolean undisplay = true;
+		overiteImplicitTimeout(driver, shorttime);
+	
+		List<WebElement> elements = getWebElements(driver, locator);
+	
+		overiteImplicitTimeout(driver, longtime);
+		if(elements.size()==0) {
+			
+			undisplay=  true;
+		}else if(elements.size()>0 && !elements.get(0).isDisplayed()) {
+			
+			undisplay=  true;
+		}else {
+		
+			undisplay = false;
+		}
+	
+		return undisplay;
+}
+
 	
 	protected boolean isElementEnabled(WebDriver driver, String locator) {
 		return getWebElement(driver, locator).isEnabled();
@@ -667,6 +690,7 @@ public class BasePage {
 		return getElementText(driver, BasePageUI.QUANTITY_WISHLIST).replace("(", "").replace(")", "");
 	}
 	
+
 	
 	public void clickLogo(WebDriver driver) {
 		waitForElementClickAble(driver, BasePageUI.LOGO_IMAGE_LINK);
