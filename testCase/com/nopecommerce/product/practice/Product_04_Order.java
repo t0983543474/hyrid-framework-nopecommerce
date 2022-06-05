@@ -15,6 +15,7 @@ import common.BaseTest;
 import common.PageGeneratorManager;
 import pageObjects.nopecommerce.product.UserDetailProductPageObject;
 import pageObjects.nopecommerce.product.UserProductPageObject;
+import pageObjects.nopecommerce.product.UserTopComponentPageObject;
 import pageObjects.nopecommerce.user.UserHomePageObject;
 import pageObjects.nopecommerce.user.UserLoginPageObject;
 import reportExtentV5Config.ExtentTestManager;
@@ -76,6 +77,7 @@ public class Product_04_Order extends BaseTest{
 		Assert.assertEquals("There are 1 item(s) in your cart.", topComponent.getTextMiniShopCart());
 		String attributes = topComponent.getAttributes(productName);
 		String price = topComponent.getPrice(productName);
+		System.out.println("top price =" + price);
 		String quantity = topComponent.getQuantity(productName);
 		
 		Assert.assertTrue(attributes.contains(processorName) && attributes.contains(HDD) && attributes.contains(OS)

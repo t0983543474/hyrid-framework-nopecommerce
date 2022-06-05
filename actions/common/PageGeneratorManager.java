@@ -2,7 +2,7 @@ package common;
 
 import org.openqa.selenium.WebDriver;
 
-import com.nopecommerce.product.practice.UserTopComponentPageObject;
+
 
 import pageObjects.jquery.dataTable.HomePageObject;
 import pageObjects.nopecommerce.admin.AdminDashboardPageObject;
@@ -12,6 +12,7 @@ import pageObjects.nopecommerce.product.UserCompareProductPageObject;
 import pageObjects.nopecommerce.product.UserDetailProductPageObject;
 import pageObjects.nopecommerce.product.UserProductPageObject;
 import pageObjects.nopecommerce.product.UserShopingCardPageObject;
+import pageObjects.nopecommerce.product.UserTopComponentPageObject;
 import pageObjects.nopecommerce.product.UserWishlistPageObject;
 import pageObjects.nopecommerce.user.UserAddressesPageObject;
 import pageObjects.nopecommerce.user.UserChangePasswordPageObject;
