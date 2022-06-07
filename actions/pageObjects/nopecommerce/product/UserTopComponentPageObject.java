@@ -1,4 +1,4 @@
-package com.nopecommerce.product.practice;
+package pageObjects.nopecommerce.product;
 
 import org.openqa.selenium.WebDriver;
 
