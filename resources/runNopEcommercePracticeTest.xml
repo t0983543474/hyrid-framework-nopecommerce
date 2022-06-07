@@ -12,10 +12,10 @@
   <test name="Run on Chrome">         
   <parameter name = "browser" value = "Chrome"/>
     <classes> 
-  <class name="com.nopecommerce.common.Common_01_Register"/>
+  			<class name="com.nopecommerce.common.Common_01_Register"/>
           	<class name="com.nopecommerce.product.practice.Product_04_Order"/>
      
-    </classes>
+    </classes> 
   </test> <!-- Test -->
   
   

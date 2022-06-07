@@ -15,6 +15,7 @@ import common.BaseTest;
 import common.PageGeneratorManager;
 import pageObjects.nopecommerce.product.UserDetailProductPageObject;
 import pageObjects.nopecommerce.product.UserProductPageObject;
+import pageObjects.nopecommerce.product.UserShopingCardPageObject;
 import pageObjects.nopecommerce.product.UserTopComponentPageObject;
 import pageObjects.nopecommerce.user.UserHomePageObject;
 import pageObjects.nopecommerce.user.UserLoginPageObject;
@@ -27,10 +28,12 @@ public class Product_04_Order extends BaseTest{
 	UserLoginPageObject loginPage;
 	UserDetailProductPageObject detailProductPage;
 	UserTopComponentPageObject topComponent;
+	UserShopingCardPageObject shoppingCartPage;
 	String productName = "Build your own computer";
 	String processorName = "2.5 GHz Intel Pentium Dual-Core E2200 [+$15.00]";
 	String RAM = "8GB [+$60.00]" , HDD = "400 GB [+$100.00]" , OS = "Vista Premium [+$60.00]" , SoftWare1 = "Microsoft Office [+$50.00]", software2="Acrobat Reader [+$10.00]" , software3="Total Commander [+$5.00]";
 	
+	String processorEdit = "2.2 GHz Intel Pentium Dual-Core E2200", RAMEdit="4GB [+$20.00]", HDDEdit="320 GB", OSEdit="Vista Home [+$50.00]"; 
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
@@ -64,7 +67,7 @@ public class Product_04_Order extends BaseTest{
 		
 		detailProductPage.clickAddToCart();
 		
-		Assert.assertEquals("The product has been added to your shopping cart", detailProductPage.getMessageAddToCartSuccess());
+		Assert.assertEquals("The product has been added to your shopping cart", detailProductPage.getMessageAddUpdateToCartSuccess());
 		
 		detailProductPage.clickCloseMessageSuccess();
 		
@@ -93,6 +96,60 @@ public class Product_04_Order extends BaseTest{
 	public void Order_02_Edit_Product_In_Shopping_Cart(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Order_02_Edit_Product_In_Shopping_Cart");
 		
+		topComponent.clickToShoppingCard(driver);
+		
+		shoppingCartPage = PageGeneratorManager.getUserShopingCardPageObject(driver);
+		
+		detailProductPage = shoppingCartPage.clickEditByProductName(productName);
+		
+		detailProductPage.selectProcessor(processorEdit);
+		
+		detailProductPage.selectHDD(HDDEdit);
+		
+		detailProductPage.selectOS(OSEdit);
+		
+		detailProductPage.selectRAM(RAMEdit);
+		
+		detailProductPage.checkSoftWare(SoftWare1);
+		
+		detailProductPage.unCheckSoftware(software2);
+		
+		detailProductPage.unCheckSoftware(software3);
+		
+		detailProductPage.inputQuantity("2");
+		
+		sleepSecond(2);
+		
+		Assert.assertEquals(detailProductPage.getPrice(), "$1,320.00");
+		
+		detailProductPage.clickUpdateShoppringCard();
+		
+		Assert.assertEquals(detailProductPage.getMessageAddUpdateToCartSuccess(), "The product has been added to your shopping cart");
+		
+		detailProductPage.clickCloseMessageSuccess();
+		sleepSecond(2);
+		
+		shoppingCartPage =  detailProductPage.clickToShoppingCard(driver);
+		
+		String attributes = shoppingCartPage.getAttributesByProductName(productName);
+		
+		String quantity = shoppingCartPage.getQuantityByProductName(productName);
+		
+		String price = shoppingCartPage.getPriceByProductName(productName);
+		
+		String total = shoppingCartPage.getTotalByProductName(productName);
+		
+		Assert.assertTrue(attributes.contains(processorEdit) && attributes.contains(HDDEdit) && attributes.contains(OSEdit)
+				&& attributes.contains(RAMEdit) && attributes.contains(SoftWare1)&& !attributes.contains(software2)&& !attributes.contains(software3));
+		
+		System.out.println("total " + total);
+		System.out.println("price " + price);
+		System.out.println("quantity " + quantity);
+		
+		int total1 = Integer.parseInt(total.replace("$", "").replace(",", "").replace(".", ""));
+		int price1 = Integer.parseInt(price.replace("$", "").replace(",", "").replace(".", ""));
+		int quan = Integer.parseInt(quantity);
+		Assert.assertEquals(price1*quan, total1);
 	}
 	
 	@Test

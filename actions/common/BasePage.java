@@ -27,6 +27,7 @@ import io.qameta.allure.Step;
 import okio.Timeout;
 import pageObjects.nopecommerce.admin.AdminLoginPageObject;
 import pageObjects.nopecommerce.product.UserProductPageObject;
+import pageObjects.nopecommerce.product.UserShopingCardPageObject;
 import pageObjects.nopecommerce.user.UserAddressesPageObject;
 import pageObjects.nopecommerce.user.UserChangePasswordPageObject;
 import pageObjects.nopecommerce.user.UserCustomerInfoPageObject;
@@ -34,6 +35,7 @@ import pageObjects.nopecommerce.user.UserHomePageObject;
 import pageObjects.nopecommerce.user.UserMyProductReviewsObject;
 import pageObjects.nopecommerce.user.UserRegisterPageObject;
 import pageObjects.nopecommerce.user.UserRewardPonitObject;
+import pageUIs.nopecommerce.product.UserTopComponentUI;
 import pageUIs.nopecommerce.user.BasePageUI;
 import pageUIs.nopecommerce.user.UserCustomerInfoUI;
 import pageUIs.nopecommerce.user.UserHomePageUI;
@@ -306,6 +308,12 @@ public class BasePage {
 	protected String getElementAttribute(WebDriver driver, String locator, String attribute) {
 		return getWebElement(driver, locator).getAttribute(attribute);
 	}
+	
+	protected String getElementAttribute(WebDriver driver, String locator, String attribute, String...dynamicValue) {
+		locator = getDynamicXpath(locator, dynamicValue);
+		return getWebElement(driver, locator).getAttribute(attribute);
+	}
+	
 	
 	protected String getElementText(WebDriver driver, String locator) {
 		return getWebElement(driver, locator).getText();
@@ -695,6 +703,12 @@ public class BasePage {
 	public void clickLogo(WebDriver driver) {
 		waitForElementClickAble(driver, BasePageUI.LOGO_IMAGE_LINK);
 		clickToElement(driver, BasePageUI.LOGO_IMAGE_LINK);
+	}
+	
+	public UserShopingCardPageObject clickToShoppingCard(WebDriver driver) {
+		waitForElementClickAble(driver, UserTopComponentUI.TOP_SHOPPING_CART_ICON);
+		clickToElement(driver, UserTopComponentUI.TOP_SHOPPING_CART_ICON);
+		return PageGeneratorManager.getUserShopingCardPageObject(driver);
 	}
 	
 	public void openPageURL(WebDriver driver,  String url) {

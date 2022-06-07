@@ -16,4 +16,5 @@ public class UserDetailProductPageUI {
 	public static final String CLOSE_MESSAGE_ICON = "css=span.close";
 	public static final String PRICE_TEXT = "css=span.price-value-1";
 	public static final String QUANTITY_TEXTBOX = "css=.add-to-cart input";
+	public static final String UPDATE_CARD ="css=button.add-to-cart-button";
 }

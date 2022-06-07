@@ -60,7 +60,7 @@ public class UserDetailProductPageObject extends BasePage{
 		clickToElement(driver, UserDetailProductPageUI.ADD_TO_CART_BUTTON);
 	}
 	
-	public String getMessageAddToCartSuccess() {
+	public String getMessageAddUpdateToCartSuccess() {
 		waitForElementVisible(driver, UserDetailProductPageUI.MESSAGE_ADD_TO_CART_SUCCESS);
 		return getElementText(driver, UserDetailProductPageUI.MESSAGE_ADD_TO_CART_SUCCESS);
 	}
@@ -68,6 +68,7 @@ public class UserDetailProductPageObject extends BasePage{
 	public void clickCloseMessageSuccess() {
 		waitForElementClickAble(driver, UserDetailProductPageUI.CLOSE_MESSAGE_ICON);
 		clickToElement(driver, UserDetailProductPageUI.CLOSE_MESSAGE_ICON);
+		
 	}
 	public String getQuantity() {
 		waitForElementVisible(driver, UserDetailProductPageUI.QUANTITY_TEXTBOX);
@@ -77,5 +78,20 @@ public class UserDetailProductPageObject extends BasePage{
 	public String getPrice() {
 		waitForElementVisible(driver, UserDetailProductPageUI.PRICE_TEXT);
 		return getElementText(driver, UserDetailProductPageUI.PRICE_TEXT);
+	}
+	public void unCheckSoftware(String software) {
+		waitForElementClickAble(driver, UserDetailProductPageUI.SOFTWARE_CHECKBOX, software);
+		uncheckDefaultToCheckbox(driver, UserDetailProductPageUI.SOFTWARE_CHECKBOX, software);
+		
+	}
+	public void inputQuantity(String quantity) {
+		// TODO Auto-generated method stub
+		waitForElementVisible(driver, UserDetailProductPageUI.QUANTITY_TEXTBOX);
+		sendKeyToElement(driver, UserDetailProductPageUI.QUANTITY_TEXTBOX, quantity);
+	}
+	public void clickUpdateShoppringCard() {
+		// TODO Auto-generated method stub
+		waitForElementClickAble(driver, UserDetailProductPageUI.UPDATE_CARD);
+		clickToElement(driver, UserDetailProductPageUI.UPDATE_CARD);
 	}
 }
