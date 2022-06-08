@@ -34,6 +34,8 @@ public class Product_04_Order extends BaseTest{
 	String RAM = "8GB [+$60.00]" , HDD = "400 GB [+$100.00]" , OS = "Vista Premium [+$60.00]" , SoftWare1 = "Microsoft Office [+$50.00]", software2="Acrobat Reader [+$10.00]" , software3="Total Commander [+$5.00]";
 	
 	String processorEdit = "2.2 GHz Intel Pentium Dual-Core E2200", RAMEdit="4GB [+$20.00]", HDDEdit="320 GB", OSEdit="Vista Home [+$50.00]"; 
+	
+	String newProductName = "Lenovo IdeaCentre 600 All-in-One PC";
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
@@ -156,12 +158,44 @@ public class Product_04_Order extends BaseTest{
 	public void Order_03_Remove_From_Cart(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Order_03_Remove_From_Cart");
 		
+		shoppingCartPage.clickRemoveProductByName(productName);
+		
+		Assert.assertEquals("Your Shopping Cart is empty!", shoppingCartPage.getMessageEmptyCard());
+		
+		
 	}
 	
 	@Test
 	public void Order_04_Update_Shopping_Cart(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Order_04_Update_Shopping_Cart");
 		
+		homePage =  shoppingCartPage.clickLogo(driver);
+		homePage.clickSubMenuInMenuByText(driver, "Computers ", "Desktops ");
+		
+		productPage = PageGeneratorManager.getUserProductPageObject(driver);
+		
+		detailProductPage = productPage.clickViewDetailProduct(newProductName);
+		
+		detailProductPage.inputQuantity("5");
+		
+		
+		String price = detailProductPage.getPrice();
+		System.out.println("Price" + price);
+		price = price.replace("$", "").replace(",", "").replace(".", "");
+		
+		detailProductPage.clickAddToCart();
+		
+		detailProductPage.clickCloseMessageSuccess();
+		
+		sleepSecond(2);
+		
+		shoppingCartPage =  detailProductPage.clickToShoppingCard(driver);
+		
+		String total  = shoppingCartPage.getTotalByProductName(newProductName);
+		System.out.println("total" + total);
+		total = total.replace("$", "").replace(",", "").replace(".", "");
+		
+		Assert.assertEquals(Integer.parseInt(price) * 5, Integer.parseInt(total));
 	}
 	
 	@Test

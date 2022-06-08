@@ -11,10 +11,10 @@ public class UserDetailProductPageUI {
 	public static final String HDD_RADIO = "xpath=//label[text()='%s']/preceding-sibling::input[@type='radio']";
 	public static final String OS_RADIO = "xpath=//label[text()='%s']/preceding-sibling::input[@type='radio']";
 	public static final String SOFTWARE_CHECKBOX = "xpath=//label[text()='%s']/preceding-sibling::input[@type='checkbox']";
-	public static final String ADD_TO_CART_BUTTON = "css=button#add-to-cart-button-1";
+	public static final String ADD_TO_CART_BUTTON = "css=button.add-to-cart-button";
 	public static final String MESSAGE_ADD_TO_CART_SUCCESS = "css=p.content";
 	public static final String CLOSE_MESSAGE_ICON = "css=span.close";
-	public static final String PRICE_TEXT = "css=span.price-value-1";
+	public static final String PRICE_TEXT = "css=.product-price span";
 	public static final String QUANTITY_TEXTBOX = "css=.add-to-cart input";
 	public static final String UPDATE_CARD ="css=button.add-to-cart-button";
 }

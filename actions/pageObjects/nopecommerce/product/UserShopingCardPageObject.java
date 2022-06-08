@@ -53,4 +53,15 @@ public class UserShopingCardPageObject extends BasePage{
 		waitForElementVisible(driver, UserShopingCardPageUI.PRICE_OF_PRODUCT, productName);
 		return getElementText(driver, UserShopingCardPageUI.PRICE_OF_PRODUCT, productName);
 	}
+	public void clickRemoveProductByName(String productName) {
+		// TODO Auto-generated method stub
+		waitForElementClickAble(driver, UserShopingCardPageUI.REMOVE_BY_PRODUCT, productName);
+		clickToElement(driver, UserShopingCardPageUI.REMOVE_BY_PRODUCT, productName);
+		
+	}
+	public String getMessageEmptyCard() {
+		// TODO Auto-generated method stub
+		waitForElementVisible(driver, UserShopingCardPageUI.NO_DATA);
+		return getElementText(driver, UserShopingCardPageUI.NO_DATA);
+	}
 }

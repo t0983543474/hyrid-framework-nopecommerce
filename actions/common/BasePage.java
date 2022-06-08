@@ -700,9 +700,10 @@ public class BasePage {
 	
 
 	
-	public void clickLogo(WebDriver driver) {
+	public UserHomePageObject clickLogo(WebDriver driver) {
 		waitForElementClickAble(driver, BasePageUI.LOGO_IMAGE_LINK);
 		clickToElement(driver, BasePageUI.LOGO_IMAGE_LINK);
+		return PageGeneratorManager.getUserHomPageObject(driver);
 	}
 	
 	public UserShopingCardPageObject clickToShoppingCard(WebDriver driver) {
