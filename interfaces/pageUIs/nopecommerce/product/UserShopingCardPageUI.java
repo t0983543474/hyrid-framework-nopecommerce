@@ -12,4 +12,5 @@ public class UserShopingCardPageUI {
 	public static final String NO_DATA = "css=.order-summary-content .no-data";
 	public static final String TERM_OF_SERVICE_CHECKBOX ="css=.terms-of-service input";
 	public static final String CHECKOUT_BTN = "css=.checkout-buttons button";
+	
 }
