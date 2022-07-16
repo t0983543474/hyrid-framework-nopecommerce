@@ -612,3 +612,23 @@
 [INFO ] [2022-05-02 16:43:12,014] Driver instance name = chromedriver: chrome on windows (ac898beb69112911f93c3ca95ae043fd)
 [INFO ] [2022-05-02 16:44:38,902] OS name = windows 10
 [INFO ] [2022-05-02 16:44:38,902] Driver instance name = chromedriver: chrome on windows (e9f2e32b43036365f6418f41e9e28dee)
+[INFO ] [2022-06-25 15:10:04,290] Browser:Chrome
+[INFO ] [2022-06-25 15:10:08,787] beforeClass - Click to link to redirect to register page
+[INFO ] [2022-06-25 15:10:09,373] beforeClass - Register to Portal User
+[INFO ] [2022-06-25 15:10:10,632] beforeClass : Verify get Message Register Success
+[INFO ] [2022-06-25 15:10:10,684] -------------PASS----------------
+[INFO ] [2022-06-25 15:10:10,684] beforeClass - Click logout
+[INFO ] [2022-06-25 15:10:23,775] OS name = windows 10
+[INFO ] [2022-06-25 15:10:23,775] Driver instance name = chromedriver: chrome on windows (6d7245497e286e401fa18c64e0a8ca52)
+[INFO ] [2022-06-26 11:54:26,312] Browser:Chrome
+[INFO ] [2022-06-26 11:54:30,063] beforeClass - Click to link to redirect to register page
+[INFO ] [2022-06-26 11:54:30,621] beforeClass - Register to Portal User
+[INFO ] [2022-06-26 11:54:31,055] beforeClass : Verify get Message Register Success
+[INFO ] [2022-06-26 11:55:34,405] Browser:Chrome
+[INFO ] [2022-06-26 11:55:36,356] beforeClass - Click to link to redirect to register page
+[INFO ] [2022-06-26 11:55:36,886] beforeClass - Register to Portal User
+[INFO ] [2022-06-26 11:55:38,054] beforeClass : Verify get Message Register Success
+[INFO ] [2022-06-26 11:55:38,100] -------------PASS----------------
+[INFO ] [2022-06-26 11:55:38,100] beforeClass - Click logout
+[INFO ] [2022-06-26 11:55:49,788] OS name = windows 10
+[INFO ] [2022-06-26 11:55:49,788] Driver instance name = chromedriver: chrome on windows (288b32bce8d10391d4a211c08aabef34)

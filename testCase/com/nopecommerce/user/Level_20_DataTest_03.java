@@ -10,6 +10,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
+import com.nopecommerce.data.UserData;
 
 //import com.aventstack.extentreports.ExtentReports;
 //import com.aventstack.extentreports.ExtentTest;
@@ -29,7 +30,7 @@ import utilities.DataHelper;
 
 
 
-public class Level_18_Pattern_Object extends BaseTest{
+public class Level_20_DataTest_03 extends BaseTest{
 
 	WebDriver driver;
 	UserHomePageObject userHomePage;
@@ -50,11 +51,11 @@ public class Level_18_Pattern_Object extends BaseTest{
 		log.info("Browser:" +  browserName);
 		driver = getBrowser(browserName);
 		
-		userEmailAddress = dataFake.getEmail();
-		 userFirstName = dataFake.getFirstName();
-		 userLastName = dataFake.getLastName();
-		 userPassword = dataFake.getPassword();
-		 userConfirmPassword = userPassword;
+		userEmailAddress = UserData.Register.Email + getRandom() + "@gmai.com";
+		 userFirstName =UserData.Register.FirstName;
+		 userLastName = UserData.Register.LastName;
+		 userPassword = UserData.Register.Password;
+		 userConfirmPassword = UserData.Register.ConfirmPass;
 		System.out.println("email= " + userEmailAddress);
 		userHomePage = PageGeneratorManager.getUserHomPageObject(driver);
 		

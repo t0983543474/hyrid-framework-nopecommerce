@@ -1,0 +1,8 @@
+[INFO ] [2022-06-26 11:55:34,405] Browser:Chrome
+[INFO ] [2022-06-26 11:55:36,356] beforeClass - Click to link to redirect to register page
+[INFO ] [2022-06-26 11:55:36,886] beforeClass - Register to Portal User
+[INFO ] [2022-06-26 11:55:38,054] beforeClass : Verify get Message Register Success
+[INFO ] [2022-06-26 11:55:38,100] -------------PASS----------------
+[INFO ] [2022-06-26 11:55:38,100] beforeClass - Click logout
+[INFO ] [2022-06-26 11:55:49,788] OS name = windows 10
+[INFO ] [2022-06-26 11:55:49,788] Driver instance name = chromedriver: chrome on windows (288b32bce8d10391d4a211c08aabef34)

@@ -13,7 +13,7 @@
   <parameter name = "browser" value = "Chrome"/>
     <classes> 
     <!-- <class name="com.nopecommerce.common.Common_01_Register"/> --> 	
-     	<class name="com.nopecommerce.user.Level_15_ExtentReport_V5"/>
+     	<class name="com.nopecommerce.user.Level_20_DataTest_03"/>
      
     </classes>
   </test> <!-- Test -->
