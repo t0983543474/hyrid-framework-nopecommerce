@@ -1,0 +1,29 @@
+{
+	"firstName" : "automation fc", 
+	"lastName"  : "Trang Le",
+	"emailAddress" : "12345trangle",
+	"password" : "123456",
+	"date" : "18",
+	"month" : "2",
+	"year" : "1889",
+	"login" : {
+		"username" : "trangle", 
+		"password" : "123456"
+	}, 
+	
+	"subjects" : [
+		{
+			"name" : "Math", 
+			"point" : "9"
+		}, 
+		{
+			"name" : "CHemistry", 
+			"point" : "9.5"
+		}, 
+		{
+			"name" : "History", 
+			"point" : "8"
+		}
+	]
+	
+}
